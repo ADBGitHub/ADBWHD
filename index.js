@@ -15,5 +15,13 @@ app.get('/get',(req,res)=>{
     console.log("TEST");
     res.send("Getting Get Request");
 });
+app.get('/rupali',(req,res)=>{
+    console.log("TEST");
+    res.send("I Love You Ji...");
+});
+app.get('/Rupali',(req,res)=>{
+    console.log("TEST");
+    res.send("I Love You Ji...");
+});
 
 app.listen(PORT,() => console.log(`Server running on port: http://localhost:${PORT}`));
