@@ -11,4 +11,9 @@ app.get('/',(req,res)=>{
     res.send("Hello from home page");
 });
 
+app.get('/get',(req,res)=>{
+    console.log("TEST");
+    res.send("Getting Get Request");
+});
+
 app.listen(PORT,() => console.log(`Server running on port: http://localhost:${PORT}`));
