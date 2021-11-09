@@ -1,14 +1,16 @@
 import express from 'express';
-import bodyParser from 'body-parser';
+import fs from 'fs';
 
 const app = express();
 const PORT = process.env.PORT || 47;
-
-app.use(bodyParser.json());
+var fs = fs();
 
 app.get('/',(req,res)=>{
-    console.log("TEST");
-    res.send("Hello from home page");
+    fs.readFile('./index.html',function(error,html){
+        if(error) throw error;
+    res.writeHead(200, {"Content-Type":"text/html"});
+    res.write(html);
+    res.end();
 });
 
 app.get('/get',(req,res)=>{
