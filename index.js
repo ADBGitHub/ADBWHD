@@ -11,9 +11,9 @@ app.get('/',(req,res)=>{
     res.send("Hello from home page");
 });
 
-app.get('/rupali',(req,res)=>{
+app.get('/get',(req,res)=>{
     console.log("TEST");
-    res.send("I Love You Rupali Ji....!!");
+    res.send("I Love You Ji....!!");
 });
 
 app.listen(PORT,() => console.log(`Server running on port: http://localhost:${PORT}`));
