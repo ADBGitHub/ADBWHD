@@ -18,6 +18,6 @@ app.get('/anjali',(req,res)=>{
 });
 app.get('/sachin',(req,res)=>{
     console.log("TEST");
-    res.send("Love You Beta Ji....!");
+    res.send("Love You Beta Jii....!");
 });
 app.listen(PORT,() => console.log(`Server running on port: http://localhost:${PORT}`));
