@@ -14,6 +14,10 @@ app.get('/sonal',(req,res)=>{
     console.log("TEST");
     res.send("I Love You Ji....!!");
 });
+app.get('/sonal',(req,res)=>{
+    console.log("TEST");
+    res.send("I Love You Ji....!!");
+});
 app.get('/anjali',(req,res)=>{
     console.log("TEST");
     res.send("I Love You....:))");
