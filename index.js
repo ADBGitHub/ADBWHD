@@ -1,8 +1,11 @@
 import express from 'express';
+import bodyParser from 'bodyParser';
 const app = express();
 
 const PORT = process.env.PORT || 47;
-
+app.use(bodyParser.urlencoded({
+    extended:true
+}));
 app.post('/',(req,res)=>{
     var api = req.body.api_key;
     console.log(api);
