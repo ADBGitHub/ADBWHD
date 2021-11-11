@@ -7,8 +7,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.post('/',(req,res)=>{
     var api = req.body.api_key;
-    console.log(api);
-    res.send(api);
+    if(api == "adbwhdapi"){res.send("Connected!");}else{res.send("Error");}    
 });
 
 app.get('/sonal',(req,res)=>{
