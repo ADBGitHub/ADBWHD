@@ -14,9 +14,13 @@ app.get('/sonal',(req,res)=>{
     console.log("TEST");
     res.send("I Love You Ji....!!");
 });
-app.get('/sonal',(req,res)=>{
+app.get('/',(req,res)=>{
     console.log("TEST");
-    res.send("I Love You Ji....!!");
+    res.send("Please request your name.");
+});
+app.get('/ambika',(req,res)=>{
+    console.log("TEST");
+    res.send("Love You re....!!");
 });
 app.get('/anjali',(req,res)=>{
     console.log("TEST");
