@@ -3,9 +3,10 @@ import fs from 'fs'
 const app = express();
 const PORT = process.env.PORT || 47;
 
-app.get('/',(req,res)=>{
-    console.log("TEST");
-    res.send("Please request your name.");
+app.post('/',(req,res)=>{
+    var api = req.body.api_key;
+    console.log(api);
+    res.send(api);
 });
 
 app.get('/sonal',(req,res)=>{
