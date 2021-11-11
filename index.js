@@ -1,6 +1,8 @@
 import express from 'express';
-import fs from 'fs'
 const app = express();
+app.use(bodyParser.urlencoded({
+    extended:true
+}));
 const PORT = process.env.PORT || 47;
 
 app.post('/',(req,res)=>{
