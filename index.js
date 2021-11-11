@@ -20,4 +20,8 @@ app.get('/sachin',(req,res)=>{
     console.log("TEST");
     res.send("Love You Beta Jii....!");
 });
+app.get('/samiksha',(req,res)=>{
+    console.log("TEST");
+    res.send("Hello Samiksha.....!!");
+});
 app.listen(PORT,() => console.log(`Server running on port: http://localhost:${PORT}`));
