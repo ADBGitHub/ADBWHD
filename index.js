@@ -1,43 +1,47 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import path from 'path';
-import Router from 'Router';
+import express from "express";
+import bodyParser from "body-parser";
+import fs from "fs";
 
 const app = express();
 const PORT = process.env.PORT || 47;
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.post('/', (req, res) => {
-    var api = req.body.api_key;
-    if (api == "adbwhdapi") { res.send("Connected!"); } else { res.send("Error"); }
+const Router = express.Router();
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+app.get("/sonal", (req, res) => {
+  console.log("TEST");
+  res.send("I Love You Ji....!!");
+});
+app.get("/", (req, res) => {
+  console.log("TEST");
+  res.send("I Love You Ji....!!");
 });
 
-app.get('/sonal', (req, res) => {
-    console.log("TEST");
-    res.send("I Love You Ji....!!");
+app.get("/ambika", (req, res) => {
+  console.log("TEST");
+  res.send("Love You re....!!");
 });
-app.get('/', (req, res) => {
-    console.log("TEST");
-    res.send("Please request your name.");
+app.get("/anjali", (req, res) => {
+  console.log("TEST");
+  res.send("I Love You....:))");
 });
-app.get('/ambika', (req, res) => {
-    console.log("TEST");
-    res.send("Love You re....!!");
+app.get("/sachin", (req, res) => {
+  console.log("TEST");
+  res.send("Love You Beta Jii....!");
 });
-app.get('/anjali', (req, res) => {
-    console.log("TEST");
-    res.send("I Love You....:))");
+app.get("/samiksha", (req, res) => {
+  console.log("TEST");
+  res.send("Hello Samiksha.....!!");
 });
-app.get('/sachin', (req, res) => {
-    console.log("TEST");
-    res.send("Love You Beta Jii....!");
-});
-app.get('/samiksha', (req, res) => {
-    console.log("TEST");
-    res.send("Hello Samiksha.....!!");
-});
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname+'/index.html'));
-});
-app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));
+// app.get('/', (req, res) => {
+//     fs.readFile('./index.html',function(err,data){
+//         res.writeHead(200,{'Content-Type':'text/html'});
+//         res.write(data);
+//         return res.end();
+//     });
+// });
+app.listen(PORT, () =>
+  console.log(`Server running on port: http://localhost:${PORT}`)
+);
