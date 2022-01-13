@@ -13,16 +13,7 @@ app.use(
     extended: true,
   })
 );
-http.get("url", (res) => {
-  let data = "";
-  res.on("data", (chunk) => {
-    data += chunk;
-  });
 
-  res.on("end", () => {
-    console.log(data);
-  });
-});
 app.get("/sonal", (req, res) => {
   console.log("TEST");
   res.send("I Love You Ji....!!");
@@ -56,8 +47,17 @@ app.get("/", (req, res) => {
   });
 });
 app.get("/onSwitch1", (req, res) => {
-  console.log("TEST");
-  res.send("Hello Samiksha.....!!");
+  // http.get("http://192.168.35.136/1E514763510C563onSwitch1", (res) => {
+  //     let data = "";
+  //     res.on("data", (chunk) => {
+  //       data += chunk;
+  //     });
+
+  //     res.on("end", () => {
+  //       console.log(data);
+  //     });
+  //   });
+  res.send("switch one is on");
 });
 app.listen(PORT, () =>
   console.log(`Server running on port: http://localhost:${PORT}`)
