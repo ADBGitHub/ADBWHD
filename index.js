@@ -5,6 +5,8 @@ import http from "http";
 const app = express();
 const PORT = process.env.PORT || 47;
 const Router = express.Router();
+let switch1 = 0;
+let switch2 = 0;
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -43,19 +45,67 @@ app.get("/", (req, res) => {
     return res.end();
   });
 });
-app.get("/onSwitch1", (req, res) => {
-  http.get("http://192.168.35.136/1E514763510C563onSwitch1", (res) => {
-    let data = "";
-    res.on("data", (chunk) => {
-      data += chunk;
-    });
+// app.get("/onSwitch1", (req, res) => {
+//   http.get("http://192.168.35.136/1E514763510C563onSwitch1", (res) => {
+//     let data = "";
+//     res.on("data", (chunk) => {
+//       data += chunk;
+//     });
 
-    res.on("end", () => {
-      console.log(data);
-    });
-  });
-  res.send(data);
+//     res.on("end", () => {
+//       console.log(data);
+//     });
+//   });
+//   res.send(data);
+// });
+app.get("/onSwitch1", (req, res) => {
+  switch1 = 1;
+  res.send("switch 1 is on");
 });
+app.get("/offSwitch1", (req, res) => {
+  switch1 = 0;
+  res.send("switch 1 is off");
+});
+app.get("/onSwitch2", (req, res) => {
+  switch2 = 1;
+  res.send("switch 2 is on");
+});
+app.get("/offSwitch2", (req, res) => {
+  switch2 = 0;
+  res.send("switch 2 is off");
+});
+app.get("/status", (req, res) => {
+  if (switch1 == 0 && switch2 == 0) {
+    res.send("xx");
+  } else if (switch1 == 1 && switch2 == 0) {
+    res.send("ox");
+  } else if (switch1 == 1 && switch2 == 1) {
+    res.send("oo");
+  } else if (switch1 == 0 && switch2 == 1) {
+    res.send("xo");
+  }
+});
+app.get("/updateSwitchOO", (req, res) => {
+  switch1 = 1;
+  switch2 = 1;
+  res.send("updated");
+});
+app.get("/updateSwitchOX", (req, res) => {
+  switch1 = 1;
+  switch2 = 0;
+  res.send("updated");
+});
+app.get("/updateSwitchXO", (req, res) => {
+  switch1 = 0;
+  switch2 = 1;
+  res.send("updated");
+});
+app.get("/updateSwitchXX", (req, res) => {
+  switch1 = 0;
+  switch2 = 0;
+  res.send("updated");
+});
+
 app.listen(PORT, () =>
   console.log(`Server running on port: http://localhost:${PORT}`)
 );
