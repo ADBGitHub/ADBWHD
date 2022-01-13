@@ -76,31 +76,31 @@ app.get("/offSwitch2", (req, res) => {
 });
 app.get("/status", (req, res) => {
   if (switch1 == 0 && switch2 == 0) {
-    res.send("xx");
+    res.send("0");
   } else if (switch1 == 1 && switch2 == 0) {
-    res.send("ox");
+    res.send("10");
   } else if (switch1 == 1 && switch2 == 1) {
-    res.send("oo");
+    res.send("11");
   } else if (switch1 == 0 && switch2 == 1) {
-    res.send("xo");
+    res.send("1");
   }
 });
-app.get("/updateSwitchOO", (req, res) => {
+app.get("/updateSwitch11", (req, res) => {
   switch1 = 1;
   switch2 = 1;
   res.send("updated");
 });
-app.get("/updateSwitchOX", (req, res) => {
+app.get("/updateSwitch10", (req, res) => {
   switch1 = 1;
   switch2 = 0;
   res.send("updated");
 });
-app.get("/updateSwitchXO", (req, res) => {
+app.get("/updateSwitch01", (req, res) => {
   switch1 = 0;
   switch2 = 1;
   res.send("updated");
 });
-app.get("/updateSwitchXX", (req, res) => {
+app.get("/updateSwitch00", (req, res) => {
   switch1 = 0;
   switch2 = 0;
   res.send("updated");
