@@ -2,12 +2,10 @@ import express from "express";
 import bodyParser from "body-parser";
 import fs from "fs";
 
-const http = require("http");
+// const http = require("http");
 const app = express();
 const PORT = process.env.PORT || 47;
 const Router = express.Router();
-var switch1 = 0;
-var switch2 = 0;
 app.use(
   bodyParser.urlencoded({
     extended: true,
