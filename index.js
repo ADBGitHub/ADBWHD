@@ -37,13 +37,13 @@ app.get("/samiksha", (req, res) => {
   console.log("TEST");
   res.send("Hello Samiksha.....!!");
 });
-app.get("/", (req, res) => {
-  fs.readFile("./index.html", function (err, data) {
-    res.writeHead(200, { "Content-Type": "text/html" });
-    res.write(data);
-    return res.end();
-  });
-});
+// app.get("/", (req, res) => {
+//   fs.readFile("./index.html", function (err, data) {
+//     res.writeHead(200, { "Content-Type": "text/html" });
+//     res.write(data);
+//     return res.end();
+//   });
+// });
 app.get("/onSwitch1", (req, res) => {
   // http.get("http://192.168.35.136/1E514763510C563onSwitch1", (res) => {
   //     let data = "";
