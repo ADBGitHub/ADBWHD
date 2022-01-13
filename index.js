@@ -54,7 +54,7 @@ app.get("/onSwitch1", (req, res) => {
       console.log(data);
     });
   });
-  res.send("switch one is on");
+  res.send(data);
 });
 app.listen(PORT, () =>
   console.log(`Server running on port: http://localhost:${PORT}`)
