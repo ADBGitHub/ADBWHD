@@ -1,8 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import fs from "fs";
-
-const http = require("http");
+import http from "http";
 const app = express();
 const PORT = process.env.PORT || 47;
 const Router = express.Router();
