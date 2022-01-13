@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import fs from "fs";
 
-// const http = require("http");
+const http = require("http");
 const app = express();
 const PORT = process.env.PORT || 47;
 const Router = express.Router();
@@ -45,16 +45,16 @@ app.get("/samiksha", (req, res) => {
 //   });
 // });
 app.get("/onSwitch1", (req, res) => {
-  // http.get("http://192.168.35.136/1E514763510C563onSwitch1", (res) => {
-  //     let data = "";
-  //     res.on("data", (chunk) => {
-  //       data += chunk;
-  //     });
+  http.get("http://192.168.35.136/1E514763510C563onSwitch1", (res) => {
+    let data = "";
+    res.on("data", (chunk) => {
+      data += chunk;
+    });
 
-  //     res.on("end", () => {
-  //       console.log(data);
-  //     });
-  //   });
+    res.on("end", () => {
+      console.log(data);
+    });
+  });
   res.send("switch one is on");
 });
 app.listen(PORT, () =>
