@@ -84,6 +84,14 @@ app.get("/offSwitch3", (req, res) => {
   switch1 = 1;
   res.send("Pump is OFF");
 });
+app.get("/onSensor", (req, res) => {
+  sensor = 1;
+  res.send("sensor 2 is on");
+});
+app.get("/offSensor", (req, res) => {
+  sensor = 0;
+  res.send("sensor 2 is off");
+});
 app.get("/status", (req, res) => {
   if (switch1 == 0 && switch2 == 0) {
     res.send("0");
