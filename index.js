@@ -96,7 +96,7 @@ app.get("/status", (req, res) => {
   }
 });
 app.get("/status1", (req, res) => {
-  if (switch3 == 1 && sensor == 0) {
+  if (switch3 == 0 && sensor == 0) {
     res.send("0");
   } else if (switch3 == 1 && sensor == 0) {
     res.send("10");
