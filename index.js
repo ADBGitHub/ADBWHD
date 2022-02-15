@@ -77,11 +77,11 @@ app.get("/offSwitch2", (req, res) => {
   res.send("switch 2 is off");
 });
 app.get("/onSwitch3", (req, res) => {
-  switch1 = 1;
+  switch3 = 1;
   res.send("Pump is ON");
 });
 app.get("/offSwitch3", (req, res) => {
-  switch1 = 0;
+  switch3 = 0;
   res.send("Pump is OFF");
 });
 app.get("/onSensor", (req, res) => {
