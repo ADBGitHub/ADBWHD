@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 47;
 const Router = express.Router();
 let switch1 = 0;
 let switch2 = 0;
+let switch3 = 0;
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -74,17 +75,22 @@ app.get("/offSwitch2", (req, res) => {
   switch2 = 0;
   res.send("switch 2 is off");
 });
-app.get("/status", (req, res) => {
-  if (switch1 == 0 && switch2 == 0) {
+app.get("/onSwitch3", (req, res) => {
+  switch1 = 1;
+  res.send("Pump is ON");
+});
+app.get("/offSwitch3", (req, res) => {
+  switch1 = 0;
+  res.send("Pump is OFF");
+});
+app.get("/status1", (req, res) => {
+  if (switch3 == 0) {
     res.send("0");
-  } else if (switch1 == 1 && switch2 == 0) {
-    res.send("10");
-  } else if (switch1 == 1 && switch2 == 1) {
-    res.send("11");
-  } else if (switch1 == 0 && switch2 == 1) {
+  } else {
     res.send("1");
   }
 });
+
 app.get("/updateSwitch11", (req, res) => {
   switch1 = 1;
   switch2 = 1;
