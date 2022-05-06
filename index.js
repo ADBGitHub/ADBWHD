@@ -123,7 +123,7 @@ app.get("/doorIsOpen", (req, res) => {
 });
 
 app.get("/doorStatus", (req, res) => {
-  res.send(doorStatus.toString());
+  res.send(door.toString());
 });
 
 app.get("/openDoor", (req, res) => {
