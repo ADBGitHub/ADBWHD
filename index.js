@@ -10,7 +10,7 @@ let switch2 = 0;
 let switch3 = 0;
 let sensor = 0;
 let door = 0;
-let doorStatus = 0;
+let lock = 0;
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -122,18 +122,18 @@ app.get("/doorIsOpen", (req, res) => {
   res.send("Door is Open");
 });
 
-app.get("/doorStatus", (req, res) => {
+app.get("/lockStatus", (req, res) => {
   res.send(door.toString());
 });
 
-app.get("/openDoor", (req, res) => {
-  doorStatus = 0;
-  res.send("Door is Open");
+app.get("/openLock", (req, res) => {
+  lock = 0;
+  res.send("Lock is Open");
 });
 
-app.get("/closeDoor", (req, res) => {
-  doorStatus = 1;
-  res.send("Door is Close");
+app.get("/closelock", (req, res) => {
+  lock = 1;
+  res.send("Lock is Close");
 });
 
 app.listen(PORT, () =>
