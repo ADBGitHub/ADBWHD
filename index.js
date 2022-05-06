@@ -126,6 +126,16 @@ app.get("/doorStatus", (req, res) => {
   res.send(doorStatus.toString());
 });
 
+app.get("/openDoor", (req, res) => {
+  doorStatus = 0;
+  res.send("Door is Open");
+});
+
+app.get("/closeDoor", (req, res) => {
+  doorStatus = 1;
+  res.send("Door is Close");
+});
+
 app.listen(PORT, () =>
   console.log(`Server running on port: http://localhost:${PORT}`)
 );
