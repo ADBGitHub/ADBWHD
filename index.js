@@ -11,6 +11,7 @@ let switch3 = 0;
 let sensor = 0;
 let door = 0;
 let doorLock = 0;
+let seq = 0;
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -137,6 +138,17 @@ app.get("/openLock", (req, res) => {
 app.get("/closelock", (req, res) => {
   doorLock = 1;
   res.send("Lock is Close");
+});
+app.get("/checkSeq", (req, res) => {
+  res.send(seq.toString());
+});
+app.get("/onSeq", (req, res) => {
+  seq = 1;
+  res.send("Seq is on");
+});
+app.get("/offSeq", (req, res) => {
+  seq = 0;
+  res.send("Seq is off");
 });
 
 app.listen(PORT, () =>
