@@ -121,6 +121,9 @@ app.get("/doorIsOpen", (req, res) => {
   door = 0;
   res.send("Door is Open");
 });
+app.get("/doorStatus", (req, res) => {
+  res.send(door.toString());
+});
 
 app.get("/lockStatus", (req, res) => {
   res.send(doorLock.toString());
