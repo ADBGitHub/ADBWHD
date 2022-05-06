@@ -110,6 +110,14 @@ app.get("/updateSwitch00", (req, res) => {
   res.send("updated");
 });
 
+app.get("/doorIsClosed", (req, res) => {
+  res.send("Door is Closed");
+});
+
+app.get("/doorIsOpen", (req, res) => {
+  res.send("Door is Open");
+});
+
 app.listen(PORT, () =>
   console.log(`Server running on port: http://localhost:${PORT}`)
 );
