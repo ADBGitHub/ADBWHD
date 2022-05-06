@@ -9,6 +9,8 @@ let switch1 = 0;
 let switch2 = 0;
 let switch3 = 0;
 let sensor = 0;
+let door = 0;
+let doorStatus = 0;
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -111,11 +113,18 @@ app.get("/updateSwitch00", (req, res) => {
 });
 
 app.get("/doorIsClosed", (req, res) => {
+  door = 1;
   res.send("Door is Closed");
 });
 
 app.get("/doorIsOpen", (req, res) => {
+  door = 0;
   res.send("Door is Open");
+});
+
+app.get("/doorStatus", (req, res) => {
+  doorStatus;
+  res.send(doorStatus);
 });
 
 app.listen(PORT, () =>
