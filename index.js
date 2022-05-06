@@ -123,7 +123,6 @@ app.get("/doorIsOpen", (req, res) => {
 });
 
 app.get("/doorStatus", (req, res) => {
-  doorStatus;
   res.send(doorStatus);
 });
 
