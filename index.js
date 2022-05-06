@@ -123,7 +123,7 @@ app.get("/doorIsOpen", (req, res) => {
 });
 
 app.get("/doorStatus", (req, res) => {
-  res.send(doorStatus);
+  res.send("0");
 });
 
 app.listen(PORT, () =>
