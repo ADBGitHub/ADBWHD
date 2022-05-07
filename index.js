@@ -150,6 +150,12 @@ app.get("/offSeq", (req, res) => {
   seq = 0;
   res.send("Seq is off");
 });
+app.get("/warning", (req, res) => {
+  if (Boolean(seq) && !Boolean(door)) {
+    res.send("Seq is Bracked...");
+  }
+  res.send("All ok");
+});
 
 app.listen(PORT, () =>
   console.log(`Server running on port: http://localhost:${PORT}`)
