@@ -131,8 +131,13 @@ app.get("/lockStatus", (req, res) => {
 });
 
 app.get("/openLock", (req, res) => {
-  doorLock = 0;
-  res.send("Lock is Open");
+  if (Boolean(seq)) {
+    res.send("Unlock Door..");
+    doorLock = 1;
+  } else {
+    doorLock = 0;
+    res.send("Lock is Open");
+  }
 });
 
 app.get("/closelock", (req, res) => {
