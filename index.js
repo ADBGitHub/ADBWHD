@@ -149,17 +149,17 @@ app.get("/checkSeq", (req, res) => {
 });
 app.get("/onSeq", (req, res) => {
   seq = 1;
-  res.send("Seq is on");
+  res.send("LOCKED....!!");
 });
 app.get("/offSeq", (req, res) => {
   seq = 0;
-  res.send("Seq is off");
+  res.send("UNLOCKED....!!");
 });
 app.get("/warning", (req, res) => {
   if (Boolean(seq) && !Boolean(door)) {
-    res.send("Seq is Bracked...");
+    res.send("!!...Sequrity is Bracked...!!");
   }
-  res.send("All ok");
+  res.send("All Ok...!!");
 });
 
 app.listen(PORT, () =>
