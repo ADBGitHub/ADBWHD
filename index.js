@@ -157,7 +157,7 @@ app.get("/offSeq", (req, res) => {
 });
 app.get("/warning", (req, res) => {
   if (Boolean(seq) && !Boolean(door)) {
-    res.send("!!...Sequrity is Bracked...!!");
+    res.send("!!...Security is broken...!!");
   }
   res.send("All Ok...!!");
 });
