@@ -15,6 +15,7 @@ let seq = 0;
 let gasLeakage = 0;
 let smoke = 0;
 let fire = 0;
+let window = "";
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -168,8 +169,17 @@ app.get("/HomeStatus", (req, res) => {
   gasLeakage = req.query.gasLeakage;
   smoke = req.query.smoke;
   fire = req.query.fire;
-  res.send(gasLeakage + smoke + fire);
+  res.send(window);
 });
+app.get("/openWindow", (req, res) => {
+  window = "openWindow";
+  res.send("Window is open");
+});
+app.get("/closeWindow", (req, res) => {
+  window = "closeWindow";
+  res.send("Window is Close");
+});
+
 app.listen(PORT, () =>
   console.log(`Server running on port: http://localhost:${PORT}`)
 );
