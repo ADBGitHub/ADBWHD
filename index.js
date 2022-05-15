@@ -171,6 +171,9 @@ app.get("/HomeStatus", (req, res) => {
   fire = req.query.fire;
   res.send(window);
 });
+app.get("/HomeStatus1", (req, res) => {
+  res.send(gasLeakage + smoke + fire);
+});
 app.get("/openWindow", (req, res) => {
   window = "openWindow";
   res.send("Window is open");
