@@ -12,6 +12,9 @@ let sensor = 0;
 let door = 0;
 let doorLock = 0;
 let seq = 0;
+let gasLeakage = 0;
+let smoke = 0;
+let fire = 0;
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -161,9 +164,11 @@ app.get("/warning", (req, res) => {
   }
   res.send("All Ok...!!");
 });
-app.get("/data", (req, res) => {
-  var data = req.query.data;
-  res.send(data);
+app.get("/HomeStatus", (req, res) => {
+  gasLeakage = req.query.gasLeakage;
+  smoke = req.query.smoke;
+  fire = req.query.fire;
+  res.send(gasLeakage + smoke + fire);
 });
 app.listen(PORT, () =>
   console.log(`Server running on port: http://localhost:${PORT}`)
