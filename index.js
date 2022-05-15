@@ -161,7 +161,10 @@ app.get("/warning", (req, res) => {
   }
   res.send("All Ok...!!");
 });
-
+app.get("/data", (req, res) => {
+  var data = req.query.data;
+  res.send(data);
+});
 app.listen(PORT, () =>
   console.log(`Server running on port: http://localhost:${PORT}`)
 );
