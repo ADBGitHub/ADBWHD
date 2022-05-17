@@ -237,7 +237,7 @@ app.get("/closelock1", (req, res) => {
   res.send("Lock is Close");
 });
 app.get("/checkSeq1", (req, res) => {
-  res.send(seq.toString());
+  res.send(seq1.toString());
 });
 app.get("/onSeq1", (req, res) => {
   seq1 = 1;
