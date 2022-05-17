@@ -248,7 +248,7 @@ app.get("/offSeq1", (req, res) => {
   res.send("UNLOCKED....!!");
 });
 app.get("/warning1", (req, res) => {
-  if (Boolean(seq) && !Boolean(door)) {
+  if (Boolean(seq1) && !Boolean(door1)) {
     res.send("!!...Security is broken...!!");
   }
   res.send("All Ok...!!");
