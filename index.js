@@ -16,6 +16,7 @@ let doorLock = 0;
 let door1 = 0;
 let doorLock1 = 0;
 let seq = 0;
+let seq1 = 0;
 let gasLeakage = 0;
 let smoke = 0;
 let fire = 0;
@@ -239,11 +240,11 @@ app.get("/checkSeq1", (req, res) => {
   res.send(seq.toString());
 });
 app.get("/onSeq1", (req, res) => {
-  seq = 1;
+  seq1 = 1;
   res.send("LOCKED....!!");
 });
 app.get("/offSeq1", (req, res) => {
-  seq = 0;
+  seq1 = 0;
   res.send("UNLOCKED....!!");
 });
 app.get("/warning1", (req, res) => {
