@@ -24,6 +24,9 @@ let smoke = 0;
 let fire = 0;
 let window = "";
 let temp = 0;
+let Irms = 0;
+let Vrms = 0;
+let Powr = 0;
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -154,35 +157,35 @@ app.get("/status2", (req, res) => {
   }
 });
 
-// app.get("/status3", (req, res) => {
-//   if (switch6 == 0 && switch7 == 0) {
-//     res.send("0");
-//   } else if (switch6 == 1 && switch7 == 0) {
-//     res.send("10");
-//   } else if (switch6 == 1 && switch7 == 1) {
-//     res.send("11");
-//   } else if (switch6 == 0 && switch7 == 1) {
-//     res.send("1");
-//   }
-//   if('temp' in req.query)
-//   temp = req.query.temp;
-// });
 app.get("/status3", (req, res) => {
-  // if (switch6 == 0 && switch7 == 0) {
-  //   res.send("0");
-  // } else if (switch6 == 1 && switch7 == 0) {
-  //   res.send("10");
-  // } else if (switch6 == 1 && switch7 == 1) {
-  //   res.send("11");
-  // } else if (switch6 == 0 && switch7 == 1) {
-  //   res.send("1");
-  // }
+  if (switch6 == 0 && switch7 == 0) {
+    res.send("0");
+  } else if (switch6 == 1 && switch7 == 0) {
+    res.send("10");
+  } else if (switch6 == 1 && switch7 == 1) {
+    res.send("11");
+  } else if (switch6 == 0 && switch7 == 1) {
+    res.send("1");
+  }
   if ("temp" in req.query) {
     temp = req.query.temp;
-    res.send(String(temp));
-  } else {
-    res.send("no data");
+    Irms = req.query.Irms;
+    Vrms = req.query.Vrms;
+    Powr = (Irms * Vrms) / 1000;
   }
+});
+
+app.get("/getData", (req, res) => {
+  res.send(
+    "T" +
+      temp.toString() +
+      "I" +
+      Irms.toString() +
+      "V" +
+      Vrms.toString() +
+      "P" +
+      Powr.toString()
+  );
 });
 
 app.get("/updateSwitch11", (req, res) => {
