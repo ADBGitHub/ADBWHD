@@ -107,19 +107,19 @@ app.get("/offSwitch5", (req, res) => {
 
 app.get("/onSwitch6", (req, res) => {
   switch6 = 1;
-  res.send("switch 1 is on");
+  res.send("Load is on");
 });
 app.get("/offSwitch6", (req, res) => {
   switch6 = 0;
-  res.send("switch 1 is off");
+  res.send("Load 1 is off");
 });
 app.get("/onSwitch7", (req, res) => {
   switch7 = 1;
-  res.send("switch 2 is on");
+  res.send("Load 2 is on");
 });
 app.get("/offSwitch7", (req, res) => {
   switch7 = 0;
-  res.send("switch 2 is off");
+  res.send("Load 2 is off");
 });
 
 app.get("/status", (req, res) => {
