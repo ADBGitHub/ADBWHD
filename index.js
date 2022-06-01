@@ -173,6 +173,7 @@ app.get("/status3", (req, res) => {
     Irms = req.query.Irms;
     Vrms = req.query.Vrms;
     Powr = (Irms * Vrms) / 1000;
+    warning2 = req.query.Warning;
   }
 });
 
