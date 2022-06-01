@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HOME</title>
-</head>
-<body>
-    <h1>Hello From Home Page !!</h1>
-    <a href="/index2.html">GO</a>
-</body>
+  </head>
+  <body>
+    <center>
+      <h1 style="color: red">Transformer Monitoring</h1>
+    </center>
+    <div>
+      <h3>Voltage : supplyVoltage V</h3>
+      <h3>Load Current : currentDraw mA</h3>
+      <h3>Power : supplyVoltage*currentDraw*1000 W</h3>
+      <h3>Warning : NO WARNING !!</h3>
+    </div>
+    <div>
+      <a href="/toggleLoad1"
+        ><button style="background-color: red; padding: 20px; margin: 10px">
+          On Load 1
+        </button></a
+      >
+      <a href="/toggleLoad2"
+        ><button style="background-color: red; padding: 20px; margin: 10px">
+          On Load 2
+        </button></a
+      >
+    </div>
+  </body>
 </html>
