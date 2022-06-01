@@ -10,6 +10,8 @@ let switch2 = 0;
 let switch3 = 0;
 let switch4 = 0;
 let switch5 = 0;
+let switch6 = 0;
+let switch7 = 0;
 let sensor = 0;
 let door = 0;
 let doorLock = 0;
@@ -21,6 +23,7 @@ let gasLeakage = 0;
 let smoke = 0;
 let fire = 0;
 let window = "";
+let temp = 0;
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -98,6 +101,23 @@ app.get("/offSwitch5", (req, res) => {
   res.send("switch 2 is off");
 });
 
+app.get("/onSwitch6", (req, res) => {
+  switch6 = 1;
+  res.send("switch 1 is on");
+});
+app.get("/offSwitch6", (req, res) => {
+  switch6 = 0;
+  res.send("switch 1 is off");
+});
+app.get("/onSwitch7", (req, res) => {
+  switch7 = 1;
+  res.send("switch 2 is on");
+});
+app.get("/offSwitch7", (req, res) => {
+  switch7 = 0;
+  res.send("switch 2 is off");
+});
+
 app.get("/status", (req, res) => {
   if (switch1 == 0 && switch2 == 0) {
     res.send("0");
@@ -131,6 +151,37 @@ app.get("/status2", (req, res) => {
     res.send("11");
   } else if (switch4 == 0 && switch5 == 1) {
     res.send("1");
+  }
+});
+
+// app.get("/status3", (req, res) => {
+//   if (switch6 == 0 && switch7 == 0) {
+//     res.send("0");
+//   } else if (switch6 == 1 && switch7 == 0) {
+//     res.send("10");
+//   } else if (switch6 == 1 && switch7 == 1) {
+//     res.send("11");
+//   } else if (switch6 == 0 && switch7 == 1) {
+//     res.send("1");
+//   }
+//   if('temp' in req.query)
+//   temp = req.query.temp;
+// });
+app.get("/status3", (req, res) => {
+  // if (switch6 == 0 && switch7 == 0) {
+  //   res.send("0");
+  // } else if (switch6 == 1 && switch7 == 0) {
+  //   res.send("10");
+  // } else if (switch6 == 1 && switch7 == 1) {
+  //   res.send("11");
+  // } else if (switch6 == 0 && switch7 == 1) {
+  //   res.send("1");
+  // }
+  if ("temp" in req.query) {
+    temp = req.query.temp;
+    res.send(String(temp));
+  } else {
+    res.send("no data");
   }
 });
 
