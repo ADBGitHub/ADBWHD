@@ -27,6 +27,7 @@ let temp = 0;
 let Irms = 0;
 let Vrms = 0;
 let Powr = 0;
+let warning2 = "No Warning...!!";
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -184,7 +185,9 @@ app.get("/getData", (req, res) => {
       "V" +
       Vrms.toString() +
       "P" +
-      Powr.toString()
+      Powr.toString() +
+      "W" +
+      warning2
   );
 });
 
