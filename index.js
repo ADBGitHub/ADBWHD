@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import fs from "fs";
 import http from "http";
 const app = express();
+app.set("view engin", "ejs");
 const PORT = process.env.PORT || 47;
 const Router = express.Router();
 let switch1 = 0;
@@ -41,6 +42,14 @@ app.get("/", (req, res) => {
     return res.end();
   });
 });
+app.post("/abhi", (req, res) => {
+  res.render("data");
+});
+app.post("/ajax", (req, res) => {
+  let ajaxdata = `<h1>` + req + `</h1>`;
+  res.send({ html: ajaxdata });
+});
+
 // app.get("/onSwitch1", (req, res) => {
 //   http.get("http://192.168.35.136/1E514763510C563onSwitch1", (res) => {
 //     let data = "";
