@@ -38,7 +38,7 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 app.get("/", (req, res) => {
   fs.readFile("./index.html", function (err, data) {
-    data.replace("{%Abhinay%}", "DEV BERMA");
+    data.toString().replace("{%Abhinay%}", "DEV BERMA");
     res.writeHead(200, { "Content-Type": "text/html" });
     res.write(data + data);
     return res.end();
