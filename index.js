@@ -39,7 +39,7 @@ app.use(express.static("public"));
 let hf = fs.readFileSync("./index.html", "utf-8");
 app.get("/", (req, res) => {
   fs.readFile("./index.html", function (err, data) {
-    hf.replace("{%Abhinay%}", "DEV BERMA");
+    hf.replace("{%Abhinay%}", "DEV");
     res.writeHead(200, { "Content-Type": "text/html" });
     res.write(data + hf);
     return res.end();
