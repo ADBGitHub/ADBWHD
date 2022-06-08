@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
   });
 });
 app.get("/abhi", (req, res) => {
-  res.render("index.html");
+  res.render("index");
 });
 app.post("/ajax", (req, res) => {
   let ajaxdata = `<h1>` + req + `</h1>`;
