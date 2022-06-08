@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import fs from "fs";
 import http from "http";
+import { path } from "express/lib/application";
 const app = express();
 app.set("view engin", "ejs");
 const PORT = process.env.PORT || 47;
@@ -35,15 +36,9 @@ app.use(
   })
 );
 app.use(bodyParser.json());
-app.use(express.static("public"));
-let hf = fs.readFileSync("./index.html", "utf-8");
+// app.use("/public",express.static(path.join(__dirname,)"public"));
 app.get("/", (req, res) => {
-  fs.readFile("./index.html", function (err, data) {
-    hf.replace("{%Abhinay%}", "DEV");
-    res.writeHead(200, { "Content-Type": "text/html" });
-    res.write(data + hf);
-    return res.end();
-  });
+  res.render("index");
 });
 app.get("/abhi", (req, res) => {
   res.render("index");
