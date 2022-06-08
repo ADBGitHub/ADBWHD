@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
     return res.end();
   });
 });
-app.post("/abhi", (req, res) => {
+app.get("/abhi", (req, res) => {
   res.render("data");
 });
 app.post("/ajax", (req, res) => {
