@@ -34,7 +34,7 @@ app.use(
     extended: true,
   })
 );
-
+app.use(express.static("public"));
 app.get("/", (req, res) => {
   fs.readFile("./index.html", function (err, data) {
     res.writeHead(200, { "Content-Type": "text/html" });
@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
   });
 });
 app.get("/abhi", (req, res) => {
-  res.render("data");
+  res.render("/views/data.ejs");
 });
 app.post("/ajax", (req, res) => {
   let ajaxdata = `<h1>` + req + `</h1>`;
