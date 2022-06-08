@@ -34,6 +34,7 @@ app.use(
     extended: true,
   })
 );
+app.use(bodyParser.json());
 app.use(express.static("public"));
 app.get("/", (req, res) => {
   fs.readFile("./index.html", function (err, data) {

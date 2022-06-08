@@ -11,22 +11,10 @@
       <h1 style="color: red">Transformer Monitoring</h1>
     </center>
     <div>
-      <h3>Voltage : supplyVoltage V</h3>
-      <h3>Load Current : currentDraw mA</h3>
-      <h3>Power : supplyVoltage*currentDraw*1000 W</h3>
-      <h3>Warning : NO WARNING !!</h3>
+      <h1>AJAX</h1>
     </div>
-    <div>
-      <a href="/toggleLoad1"
-        ><button style="background-color: red; padding: 20px; margin: 10px">
-          On Load 1
-        </button></a
-      >
-      <a href="/toggleLoad2"
-        ><button style="background-color: red; padding: 20px; margin: 10px">
-          On Load 2
-        </button></a
-      >
-    </div>
+    <button onclick="requestAJAX">CLICK</button>
+    <div id="abhi">Will Show you Letter....</div>
+    <script src="/public/logic.js" async defer></script>
   </body>
 </html>
