@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home Automation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <style>
+      @media only screen and (max-width: 768px) {
+        .txtHeadLine {
+          font-size: x-large;
+        }
+      }
+      @media only screen and (max-width: 576px) {
+        .c2s1 {
+          width: 100%;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+        .txtHeadLine {
+          font-size: xx-large;
+        }
+        .wraper {
+          padding-bottom: 100px;
+        }
+      }
+      @media only screen and (min-width: 576px) {
+        .c2s1 {
+          width: 50%;
+        }
+      }
+      .imgBanner {
+        width: 100%;
+      }
+      .custom-shape-divider-bottom-1654842769 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+      }
+
+      .custom-shape-divider-bottom-1654842769 svg {
+        position: relative;
+        display: block;
+        width: calc(106% + 1.3px);
+        height: 197px;
+      }
+
+      .custom-shape-divider-bottom-1654842769 .shape-fill {
+        fill: #ffffff;
+      }
+      .wraper {
+        position: relative;
+        padding-bottom: 150px;
+        background-color: blueviolet;
+        margin-bottom: 20px;
+      }
+      .navbar {
+        background-color: blueviolet;
+      }
+      .txtHeadLine {
+        color: #ffffff;
+      }
+      .txtSectionHead {
+        display: contents;
+        padding-top: 14px;
+      }
+      .btn-outline-primary {
+        color: #8138ab;
+        border-color: #8138ab;
+        border-radius: 40px;
+      }
+      .btn-outline-primary:hover {
+        background-color: #8138ab;
+        border-color: #8138ab;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Project Report</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Rooms
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="bedroom.ejs">Bedroom</a></li>
+                <li><a class="dropdown-item" href="hall.ejs">Hall</a></li>
+                <li><a class="dropdown-item" href="kitchen.ejs">Kitchen</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">More Rooms</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Electricity Bill</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="wraper">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="c2s1">
+            <h1 class="txtHeadLine">
+              HOME AUTOMATION CIRCUIT USING SOLID STATE RELAY
+            </h1>
+          </div>
+          <div class="c2s1">
+            <img class="imgBanner" src="images/Smart-Home1.png" />
+          </div>
+        </div>
+      </div>
+      <div class="custom-shape-divider-bottom-1654842769">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <h3 class="txtSectionHead">
+          <span style="color: #084298; margin-right: 7px"> Technology </span>
+          Used
+        </h3>
+      </div>
+      <div class="row justify-content-center">
+        <p class="txtSectionHead">
+          (We used various technologies, some of them given below)
+        </p>
+      </div>
+      <div class="row justify-content-center">
+        <div
+          class="card text-center"
+          style="width: 20rem; border: none; margin: 20px"
+        >
+          <img
+            src="img/iot"
+            class="card-img-top"
+            alt="..."
+            style="height: 60px; width: 60px; align-self: center"
+          />
+          <div class="card-body">
+            <h5 class="card-title">IoT</h5>
+            <p class="card-text">
+              The Internet of Things (IoT) describes physical objects (or groups
+              of such objects) with sensors, processing ability, software, and
+              other technologies that connect and exchange data with other
+              devices and systems over the Internet or other communications
+              networks.
+            </p>
+            <a type="button" class="btn btn-outline-primary">Know More ></a>
+          </div>
+        </div>
+        <div
+          class="card text-center"
+          style="width: 20rem; border: none; margin: 20px"
+        >
+          <img
+            src="img/node"
+            class="card-img-top"
+            alt="..."
+            style="height: 60px; width: 90px; align-self: center"
+          />
+          <div class="card-body">
+            <h5 class="card-title">NODE JS</h5>
+            <p class="card-text">
+              Node.js is an open source, cross-platform runtime environment for
+              developing server-side and networking applications. Node.js
+              applications are written in JavaScript, and can be run within the
+              Node.js runtime on OS X, Microsoft Windows, and Linux.
+            </p>
+            <a type="button" class="btn btn-outline-primary">Know More ></a>
+          </div>
+        </div>
+        <div
+          class="card text-center"
+          style="width: 20rem; border: none; margin: 30px 20px"
+        >
+          <img
+            src="img/eagle"
+            class="card-img-top"
+            alt="..."
+            style="height: 55px; width: 150px; align-self: center"
+          />
+          <div class="card-body">
+            <h5 class="card-title">EAGLE</h5>
+            <p class="card-text">
+              EAGLE is a scriptable electronic design automation (EDA)
+              application with schematic capture, printed circuit board (PCB)
+              layout, auto-router and computer-aided manufacturing (CAM)
+              features. EAGLE stands for Easily Applicable Graphical Layout
+              Editor and is developed by CadSoft Computer GmbH. The company was
+              acquired by Autodesk Inc. in 2016.
+            </p>
+            <a type="button" class="btn btn-outline-primary">Know More ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1>Hello, world!</h1>
+    <h1>Hello from EJS</h1>
+    <button id="clickBtn">CLICK</button>
+    <h3 id="abhi">Hello</h3>
+    <script src="./HAMP.js" async defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

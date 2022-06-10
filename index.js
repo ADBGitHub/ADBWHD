@@ -2,9 +2,8 @@ import express from "express";
 import bodyParser from "body-parser";
 import fs from "fs";
 import http from "http";
-import { path } from "express/lib/application";
 const app = express();
-app.set("view engin", "ejs");
+app.set("view engine", "ejs");
 const PORT = process.env.PORT || 47;
 const Router = express.Router();
 let switch1 = 0;
@@ -36,16 +35,35 @@ app.use(
   })
 );
 app.use(bodyParser.json());
-// app.use("/public",express.static(path.join(__dirname,)"public"));
+app.use(express.static("public"));
+let hf = fs.readFileSync("./views/HAMP.ejs", "utf-8");
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("HAMP");
 });
-app.get("/abhi", (req, res) => {
-  res.render("index");
+app.get("/bedroom.ejs", (req, res) => {
+  res.render("bedroom");
 });
-app.post("/ajax", (req, res) => {
-  let ajaxdata = `<h1>` + req + `</h1>`;
-  res.send({ html: ajaxdata });
+app.get("/hall.ejs", (req, res) => {
+  res.render("hall");
+});
+app.get("/kitchen.ejs", (req, res) => {
+  res.render("kitchen");
+});
+app.get("/images/Smart-Home1.png", (req, res) => {
+  res.send(fs.readFileSync("./views/images/Smart-Home1.png"));
+});
+app.get("/img/iot", (req, res) => {
+  res.send(fs.readFileSync("./views/images/iot.png"));
+});
+app.get("/img/node", (req, res) => {
+  res.send(fs.readFileSync("./views/images/node.png"));
+});
+app.get("/img/eagle", (req, res) => {
+  res.send(fs.readFileSync("./views/images/eagle.png"));
+});
+
+app.get("/ajax", (req, res) => {
+  res.send("AJAX DATA");
 });
 
 // app.get("/onSwitch1", (req, res) => {
