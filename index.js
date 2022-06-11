@@ -49,6 +49,9 @@ app.get("/hall.ejs", (req, res) => {
 app.get("/kitchen.ejs", (req, res) => {
   res.render("kitchen");
 });
+app.get("/projectReport.ejs", (req, res) => {
+  res.render("projectReport");
+});
 app.get("/images/Smart-Home1.png", (req, res) => {
   res.send(fs.readFileSync("./views/images/Smart-Home1.png"));
 });
@@ -61,7 +64,15 @@ app.get("/img/node", (req, res) => {
 app.get("/img/eagle", (req, res) => {
   res.send(fs.readFileSync("./views/images/eagle.png"));
 });
-
+app.get("/img/esp32", (req, res) => {
+  res.send(fs.readFileSync("./views/images/esp32.png"));
+});
+app.get("/img/triac", (req, res) => {
+  res.send(fs.readFileSync("./views/images/triac.png"));
+});
+app.get("/img/ttp223", (req, res) => {
+  res.send(fs.readFileSync("./views/images/ttp223.png"));
+});
 app.get("/ajax", (req, res) => {
   res.send("AJAX DATA");
 });

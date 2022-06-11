@@ -46,14 +46,12 @@
         line-height: 0;
         transform: rotate(180deg);
       }
-
       .custom-shape-divider-bottom-1654842769 svg {
         position: relative;
         display: block;
         width: calc(106% + 1.3px);
         height: 197px;
       }
-
       .custom-shape-divider-bottom-1654842769 .shape-fill {
         fill: #ffffff;
       }
@@ -61,7 +59,7 @@
         position: relative;
         padding-bottom: 150px;
         background-color: blueviolet;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
       }
       .navbar {
         background-color: blueviolet;
@@ -82,9 +80,15 @@
         background-color: #8138ab;
         border-color: #8138ab;
       }
+      .c2s1 {
+        display: flex;
+        justify-content: space-evenly;
+        /* text-align: center; */
+      }
     </style>
   </head>
   <body>
+    <!-- Navbar  -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -106,7 +110,7 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Project Report</a>
+              <a class="nav-link" href="projectReport.ejs">Project Report</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -136,6 +140,8 @@
         </div>
       </div>
     </nav>
+
+    <!--Page Head-->
     <div class="wraper">
       <div class="container">
         <div class="row align-items-center">
@@ -163,6 +169,8 @@
         </svg>
       </div>
     </div>
+
+    <!--Technology Use Section-->
     <div class="container">
       <div class="row justify-content-center">
         <h3 class="txtSectionHead">
@@ -172,7 +180,8 @@
       </div>
       <div class="row justify-content-center">
         <p class="txtSectionHead">
-          (We used various technologies, some of them given below)
+          (We used various technologies, some important technologies are given
+          below)
         </p>
       </div>
       <div class="row justify-content-center">
@@ -195,7 +204,12 @@
               devices and systems over the Internet or other communications
               networks.
             </p>
-            <a type="button" class="btn btn-outline-primary">Know More ></a>
+            <a
+              href="https://en.wikipedia.org/wiki/Internet_of_things"
+              type="button"
+              class="btn btn-outline-primary"
+              >Know More ></a
+            >
           </div>
         </div>
         <div
@@ -216,7 +230,12 @@
               applications are written in JavaScript, and can be run within the
               Node.js runtime on OS X, Microsoft Windows, and Linux.
             </p>
-            <a type="button" class="btn btn-outline-primary">Know More ></a>
+            <a
+              href="https://www.tutorialspoint.com/nodejs/nodejs_introduction.htm"
+              type="button"
+              class="btn btn-outline-primary"
+              >Know More ></a
+            >
           </div>
         </div>
         <div
@@ -239,11 +258,159 @@
               Editor and is developed by CadSoft Computer GmbH. The company was
               acquired by Autodesk Inc. in 2016.
             </p>
-            <a type="button" class="btn btn-outline-primary">Know More ></a>
+            <a
+              href="https://en.wikipedia.org/wiki/EAGLE_(program)"
+              type="button"
+              class="btn btn-outline-primary"
+              >Know More ></a
+            >
           </div>
         </div>
       </div>
     </div>
+
+    <!--Page Head section 2-->
+    <div class="wraper" style="margin: 0px; padding: 20px">
+      <div class="container">
+        <div class="row justify-content-center">
+          <h3 class="txtSectionHead" style="color: white">
+            <span style="color: #022962; margin-right: 7px"> Components </span>
+            Used
+          </h3>
+        </div>
+        <div class="row justify-content-center" style="text-align: center">
+          <p class="txtSectionHead" style="color: white">
+            (We used various components, some important components are given
+            below)
+          </p>
+        </div>
+        <div
+          class="row align-items-center justify-content-center"
+          style="margin-top: 30px"
+        >
+          <div class="c2s1">
+            <div
+              class="card text-center"
+              style="width: 40rem; border: none; margin: 20px"
+            >
+              <div class="card-body" style="background-color: blueviolet">
+                <h5 class="card-title" style="color: white">ESP32</h5>
+                <p class="card-text" style="color: white">
+                  ESP32 is a series of low-cost, low-power system on a chip
+                  microcontrollers with integrated Wi-Fi and dual-mode
+                  Bluetooth. The ESP32 series employs either a Tensilica Xtensa
+                  LX6 microprocessor in both dual-core and single-core
+                  variations, Xtensa LX7 dual-core microprocessor or a
+                  single-core RISC-V microprocessor and includes built-in
+                  antenna switches, RF balun, power amplifier, low-noise receive
+                  amplifier, filters, and power-management modules. ESP32 is
+                  created and developed by Espressif Systems, a Shanghai-based
+                  Chinese company, and is manufactured by TSMC using their 40 nm
+                  process
+                </p>
+                <a
+                  href="https://en.wikipedia.org/wiki/Internet_of_things"
+                  type="button"
+                  class="btn btn-outline-primary"
+                  style="border-color: white; color: white"
+                  >Know More ></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="c2s1">
+            <img
+              class="imgBanner"
+              src="img/esp32"
+              style="height: 200px; width: auto; align-self: center"
+            />
+          </div>
+        </div>
+        <div
+          class="row align-items-center justify-content-center"
+          style="margin-top: 30px"
+        >
+          <div class="c2s1">
+            <div
+              class="card text-center"
+              style="width: 40rem; border: none; margin: 20px"
+            >
+              <div class="card-body" style="background-color: blueviolet">
+                <h5 class="card-title" style="color: white">TRIAC</h5>
+                <p class="card-text" style="color: white">
+                  A TRIAC (triode for alternating current; also bidirectional
+                  triode thyristor or bilateral triode thyristor[1]) is a three
+                  terminal electronic component that conducts current in either
+                  direction when triggered. The term TRIAC is a genericised
+                  trademark. TRIACs are a subset of thyristors (analogous to a
+                  relay in that a small voltage and current can control a much
+                  larger voltage and current) and are related to silicon
+                  controlled rectifiers (SCRs). TRIACs differ from SCRs in that
+                  they allow current flow in both directions, whereas an SCR can
+                  only conduct current in a single direction. Most TRIACs can be
+                  triggered by applying either a positive or negative voltage to
+                  the gate (an SCR requires a positive voltage). Once triggered,
+                  SCRs and TRIACs continue to conduct, even if the gate current
+                  ceases, until the main current drops below a certain level
+                  called the holding current.
+                </p>
+                <a
+                  href="https://en.wikipedia.org/wiki/TRIAC#:~:text=A%20TRIAC%20(triode%20for%20alternating,TRIAC%20is%20a%20genericised%20trademark."
+                  type="button"
+                  class="btn btn-outline-primary"
+                  style="border-color: white; color: white"
+                  >Know More ></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="c2s1">
+            <img
+              class="imgBanner"
+              src="img/triac"
+              style="height: 200px; width: auto; align-self: center"
+            />
+          </div>
+        </div>
+        <div
+          class="row align-items-center justify-content-center"
+          style="margin-top: 30px"
+        >
+          <div class="c2s1">
+            <div
+              class="card text-center"
+              style="width: 40rem; border: none; margin: 20px"
+            >
+              <div class="card-body" style="background-color: blueviolet">
+                <h5 class="card-title" style="color: white">TTP223</h5>
+                <p class="card-text" style="color: white">
+                  The TTP223-BA6/TTP223N-BA6 TonTouchTM is a touch pad detector
+                  IC which offers 1 touch key. The touching detection IC is
+                  designed for replacing traditional direct button key with
+                  diverse pad size. Low power consumption and wide operating
+                  voltage are the contact key features for DC or AC application.
+                </p>
+                <a
+                  href="https://en.wikipedia.org/wiki/Internet_of_things"
+                  type="button"
+                  class="btn btn-outline-primary"
+                  style="border-color: white; color: white"
+                  >Know More ></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="c2s1">
+            <img
+              class="imgBanner"
+              src="img/ttp223"
+              style="height: 200px; width: auto; align-self: center"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
     <h1>Hello, world!</h1>
     <h1>Hello from EJS</h1>
     <button id="clickBtn">CLICK</button>
