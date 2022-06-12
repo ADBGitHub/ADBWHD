@@ -88,6 +88,9 @@ app.get("/img/nxt", (req, res) => {
 app.get("/img/prv", (req, res) => {
   res.send(fs.readFileSync("./views/images/prv.png"));
 });
+app.get("/PRF.pdf", (req, res) => {
+  res.send(fs.readFileSync("./PRF.pdf"));
+});
 app.get("/ajax", (req, res) => {
   res.send("AJAX DATA");
 });
