@@ -1,428 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home Automation</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <style>
-      @media only screen and (max-width: 768px) {
-        .txtHeadLine {
-          font-size: x-large;
-        }
-      }
-      @media only screen and (max-width: 576px) {
-        .c2s1 {
-          width: 100%;
-          padding-top: 20px;
-          padding-bottom: 20px;
-        }
-        .txtHeadLine {
-          font-size: xx-large;
-        }
-        .wraper {
-          padding-bottom: 100px;
-        }
-      }
-      @media only screen and (min-width: 576px) {
-        .c2s1 {
-          width: 50%;
-        }
-      }
-      .imgBanner {
-        width: 100%;
-      }
-      .custom-shape-divider-bottom-1654842769 {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-        transform: rotate(180deg);
-      }
-      .custom-shape-divider-bottom-1654842769 svg {
-        position: relative;
-        display: block;
-        width: calc(106% + 1.3px);
-        height: 197px;
-      }
-      .custom-shape-divider-bottom-1654842769 .shape-fill {
-        fill: #ffffff;
-      }
-      .wraper {
-        position: relative;
-        padding-bottom: 150px;
-        background-color: blueviolet;
-        margin-bottom: 40px;
-      }
-      .navbar {
-        background-color: blueviolet;
-      }
-      .txtHeadLine {
-        color: #ffffff;
-      }
-      .txtSectionHead {
-        display: contents;
-        padding-top: 14px;
-      }
-      .btn-outline-primary {
-        color: #8138ab;
-        border-color: #8138ab;
-        border-radius: 40px;
-      }
-      .btn-outline-primary:hover {
-        background-color: #8138ab;
-        border-color: #8138ab;
-      }
-      .c2s1 {
-        display: flex;
-        justify-content: space-evenly;
-        /* text-align: center; */
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Navbar  -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="projectReport.ejs">Project Report</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Rooms
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="bedroom.ejs">Bedroom</a></li>
-                <li><a class="dropdown-item" href="hall.ejs">Hall</a></li>
-                <li><a class="dropdown-item" href="kitchen.ejs">Kitchen</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">More Rooms</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Electricity Bill</a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home Automation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <style>
+    @media only screen and (max-width: 768px) {
+      .txtHeadLine {
+        font-size: x-large;
+      }
+    }
+
+    @media only screen and (max-width: 576px) {
+      .c2s1 {
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .txtHeadLine {
+        font-size: xx-large;
+      }
+
+      .wraper {
+        padding-bottom: 100px;
+      }
+    }
+
+    @media only screen and (min-width: 576px) {
+      .c2s1 {
+        width: 50%;
+      }
+    }
+
+    .imgBanner {
+      width: 100%;
+    }
+
+    .custom-shape-divider-bottom-1654842769 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+    }
+
+    .custom-shape-divider-bottom-1654842769 svg {
+      position: relative;
+      display: block;
+      width: calc(106% + 1.3px);
+      height: 197px;
+    }
+
+    .custom-shape-divider-bottom-1654842769 .shape-fill {
+      fill: #ffffff;
+    }
+
+    .wraper {
+      position: relative;
+      padding-bottom: 70px;
+      background-color: blueviolet;
+      margin-bottom: 40px;
+    }
+
+    .navbar {
+      background-color: blueviolet;
+    }
+
+    .txtHeadLine {
+      color: #ffffff;
+    }
+
+    .txtSectionHead {
+      display: contents;
+      padding-top: 14px;
+    }
+
+    .btn-outline-primary {
+      color: #8138ab;
+      border-color: #8138ab;
+      border-radius: 40px;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: #8138ab;
+      border-color: #8138ab;
+    }
+
+    .c2s1 {
+      display: flex;
+      justify-content: space-evenly;
+      /* text-align: center; */
+    }
+
+    .container {
+      padding-top: 35px;
+    }
+
+    .carousel-control-next-icon {
+      background-image: url(img/nxt);
+    }
+
+    .carousel-control-prev-icon {
+      background-image: url(img/prv);
+    }
+
+    .custom-shape-divider-top-1655014238 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .custom-shape-divider-top-1655014238 svg {
+      position: relative;
+      display: block;
+      width: calc(103% + 1.3px);
+      height: 150px;
+    }
+
+    .custom-shape-divider-top-1655014238 .shape-fill {
+      fill: #FFFFFF;
+    }
+
+    .itelic a {
+      color: #FFFFFF;
+      font-size: large;
+      font-style: italic;
+      text-decoration: none;
+    }
+
+    .mb-2 a {
+      font-size: large;
+      text-decoration: none;
+    }
+    .footer .card{
+      background-color: transparent;
+      padding-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar  -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Major Project</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projectReport.ejs">Project Report</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Rooms
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="bedroom.ejs">Bedroom</a></li>
+              <li><a class="dropdown-item" href="hall.ejs">Hall</a></li>
+              <li><a class="dropdown-item" href="kitchen.ejs">Kitchen</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">More Rooms</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Electricity Bill</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Page Head-->
+  <div class="wraper">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="c2s1">
+          <h1 class="txtHeadLine">
+            HOME AUTOMATION CIRCUIT USING SOLID STATE RELAY
+          </h1>
+        </div>
+        <div class="c2s1">
+          <img class="imgBanner" src="images/Smart-Home1.png" />
+        </div>
+      </div>
+    </div>
+    <div class="custom-shape-divider-bottom-1654842769">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+          class="shape-fill"></path>
+      </svg>
+    </div>
+  </div>
+
+  <!--Technology Use Section-->
+  <div class="container">
+    <div class="row justify-content-center">
+      <h3 class="txtSectionHead">
+        <span style="color: #0dcaf0; margin-right: 7px"> Technology </span>
+        Used
+      </h3>
+    </div>
+    <div class="row justify-content-center">
+      <p class="txtSectionHead">
+        (We used various technologies; some important technologies are given
+        below)
+      </p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="card text-center" style="width: 20rem; border: none; margin: 20px">
+        <img src="img/iot" class="card-img-top" alt="..." style="height: 60px; width: 60px; align-self: center" />
+        <div class="card-body">
+          <h5 class="card-title">IoT</h5>
+          <p class="card-text">
+            The Internet of Things (IoT) describes physical objects (or groups
+            of such objects) with sensors, processing ability, software, and
+            other technologies that connect and exchange data with other
+            devices and systems over the Internet or other communications
+            networks.
+          </p>
+          <a href="https://en.wikipedia.org/wiki/Internet_of_things" type="button" class="btn btn-outline-primary">Know
+            More ></a>
+        </div>
+      </div>
+      <div class="card text-center" style="width: 20rem; border: none; margin: 20px">
+        <img src="img/node" class="card-img-top" alt="..." style="height: 60px; width: 90px; align-self: center" />
+        <div class="card-body">
+          <h5 class="card-title">NODE JS</h5>
+          <p class="card-text">
+            Node.js is an open source, cross-platform runtime environment for
+            developing server-side and networking applications. Node.js
+            applications are written in JavaScript, and can be run within the
+            Node.js runtime on OS X, Microsoft Windows, and Linux.
+          </p>
+          <a href="https://www.tutorialspoint.com/nodejs/nodejs_introduction.htm" type="button"
+            class="btn btn-outline-primary">Know More ></a>
+        </div>
+      </div>
+      <div class="card text-center" style="width: 20rem; border: none; margin: 30px 20px">
+        <img src="img/eagle" class="card-img-top" alt="..." style="height: 55px; width: 150px; align-self: center" />
+        <div class="card-body">
+          <h5 class="card-title">EAGLE</h5>
+          <p class="card-text">
+            EAGLE is a scriptable electronic design automation (EDA)
+            application with schematic capture, printed circuit board (PCB)
+            layout, auto-router and computer-aided manufacturing (CAM)
+            features. EAGLE stands for Easily Applicable Graphical Layout
+            Editor and is developed by CadSoft Computer GmbH. The company was
+            acquired by Autodesk Inc. in 2016.
+          </p>
+          <a href="https://en.wikipedia.org/wiki/EAGLE_(program)" type="button" class="btn btn-outline-primary">Know
+            More ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Page Head section 2-->
+  <div class="wraper" style="margin: 0px; padding: 20px">
+    <div class="container">
+      <div class="row justify-content-center">
+        <h3 class="txtSectionHead" style="color: white">
+          <span style="color: #0dcaf0; margin-right: 7px"> Components </span>
+          Used
+        </h3>
+      </div>
+      <div class="row justify-content-center" style="text-align: center">
+        <p class="txtSectionHead" style="color: white">
+          (We used various components, some important components are given
+          below)
+        </p>
+      </div>
+      <div class="row align-items-center justify-content-center" style="margin-top: 30px">
+        <div class="c2s1">
+          <div class="card text-center" style="width: 40rem; border: none; margin: 20px">
+            <div class="card-body" style="background-color: blueviolet">
+              <h3 class="card-title" style="color: white">ESP32</h3>
+              <p class="card-text" style="color: white">
+                ESP32 is a series of low-cost, low-power system on a chip
+                microcontrollers with integrated Wi-Fi and dual-mode
+                Bluetooth. The ESP32 series employs either a Tensilica Xtensa
+                LX6 microprocessor in both dual-core and single-core
+                variations, Xtensa LX7 dual-core microprocessor or a
+                single-core RISC-V microprocessor and includes built-in
+                antenna switches, RF balun, power amplifier, low-noise receive
+                amplifier, filters, and power-management modules. ESP32 is
+                created and developed by Espressif Systems, a Shanghai-based
+                Chinese company, and is manufactured by TSMC using their 40 nm
+                process
+              </p>
+              <a href="https://en.wikipedia.org/wiki/Internet_of_things" type="button" class="btn btn-outline-primary"
+                style="border-color: white; color: white">Know More ></a>
+            </div>
+          </div>
+        </div>
+        <div class="c2s1">
+          <img class="imgBanner" src="img/esp32" style="height: 200px; width: auto; align-self: center" />
+        </div>
+      </div>
+      <div class="row align-items-center justify-content-center" style="margin-top: 30px">
+        <div class="c2s1">
+          <div class="card text-center" style="width: 40rem; border: none; margin: 20px">
+            <div class="card-body" style="background-color: blueviolet">
+              <h3 class="card-title" style="color: white">TRIAC</h3>
+              <p class="card-text" style="color: white">
+                A TRIAC (triode for alternating current; also bidirectional
+                triode thyristor or bilateral triode thyristor[1]) is a three
+                terminal electronic component that conducts current in either
+                direction when triggered. The term TRIAC is a genericised
+                trademark. TRIACs are a subset of thyristors (analogous to a
+                relay in that a small voltage and current can control a much
+                larger voltage and current) and are related to silicon
+                controlled rectifiers (SCRs). TRIACs differ from SCRs in that
+                they allow current flow in both directions, whereas an SCR can
+                only conduct current in a single direction. Most TRIACs can be
+                triggered by applying either a positive or negative voltage to
+                the gate (an SCR requires a positive voltage). Once triggered,
+                SCRs and TRIACs continue to conduct, even if the gate current
+                ceases, until the main current drops below a certain level
+                called the holding current.
+              </p>
+              <a href="https://en.wikipedia.org/wiki/TRIAC#:~:text=A%20TRIAC%20(triode%20for%20alternating,TRIAC%20is%20a%20genericised%20trademark."
+                type="button" class="btn btn-outline-primary" style="border-color: white; color: white">Know More ></a>
+            </div>
+          </div>
+        </div>
+        <div class="c2s1">
+          <img class="imgBanner" src="img/triac" style="height: 200px; width: auto; align-self: center" />
+        </div>
+      </div>
+      <div class="row align-items-center justify-content-center" style="margin-top: 30px">
+        <div class="c2s1">
+          <div class="card text-center" style="width: 40rem; border: none; margin: 20px">
+            <div class="card-body" style="background-color: blueviolet">
+              <h3 class="card-title" style="color: white">TTP223</h3>
+              <p class="card-text" style="color: white">
+                The TTP223-BA6/TTP223N-BA6 TonTouchTM is a touch pad detector
+                IC which offers 1 touch key. The touching detection IC is
+                designed for replacing traditional direct button key with
+                diverse pad size. Low power consumption and wide operating
+                voltage are the contact key features for DC or AC application.
+              </p>
+              <a href="https://en.wikipedia.org/wiki/Internet_of_things" type="button" class="btn btn-outline-primary"
+                style="border-color: white; color: white">Know More ></a>
+            </div>
+          </div>
+        </div>
+        <div class="c2s1">
+          <img class="imgBanner" src="img/ttp223" style="height: 200px; width: auto; align-self: center" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Images Section-->
+  <div class="container" style="">
+    <div class="row justify-content-center">
+      <h3 class="txtSectionHead">
+        Some
+        <span style="color: #0dcaf0; margin-left: 7px"> Images </span><span style="margin-left: 7px"> </span>
+        of <span style="color: #0dcaf0; margin-left: 7px"> Project </span>
+      </h3>
+    </div>
+    <div class="row justify-content-center">
+      <p class="txtSectionHead">
+        (We used various technologies, some important technologies are given
+        below)
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/P1" class=" d-block w-100 c2s1" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="img/P2" class=" d-block w-100 c2s1" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="img/P3" class=" d-block w-100 c2s1" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+  <div class="wraper" style=" height: 150px; margin-top: 40px; margin-bottom: 0px;">
+    <div class="custom-shape-divider-top-1655014238">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+          class="shape-fill"></path>
+      </svg>
+    </div>
+  </div>
+
+
+  <div class="footer" style="background-color: blueviolet;">
+    <div class="row justify-content-center">
+      <div class="card text-Left" style="width: 25rem; border: none;">
+        <div class="card-body">
+          <a class="d-inline-flex align-items-center mb-2 link-light text-decoration-none" href="/"
+            aria-label="Bootstrap">
+            <img src="#" class="d-block me-2" width="120" height="96" viewBox="0 0 118 94" role="img">
+            <span class="fs-5">
+              <h1>MAJOR PROJECT</h1>
+            </span>
+          </a>
+          <ul class="list-unstyled small text-muted">
+            <li class="mb-2">
+              <h3 style="color:#ffffff">Home Automation Circuit Using Solid State Relay</h3>
             </li>
           </ul>
         </div>
       </div>
-    </nav>
-
-    <!--Page Head-->
-    <div class="wraper">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="c2s1">
-            <h1 class="txtHeadLine">
-              HOME AUTOMATION CIRCUIT USING SOLID STATE RELAY
-            </h1>
-          </div>
-          <div class="c2s1">
-            <img class="imgBanner" src="images/Smart-Home1.png" />
-          </div>
+      <div class="card text-left" style="width: 25rem; border: none;">
+        <div class="card-body">
+          <h3 class="card-title" style="color: white;">Links</h3>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a style="color: white;" href="/">Home</a></li>
+            <li class="mb-2"><a style="color: white;" href="projectReport.ejs">Project Report</a></li>
+            <li class="mb-2"><a style="color: white;" href="bedroom.ejs">Bedroom</a></li>
+            <li class="mb-2"><a style="color: white;" href="hall.ejs">Hall</a></li>
+            <li class="mb-2"><a style="color: white;" href="kitchen.ejs">Kitchen</a></li>
+          </ul>
         </div>
       </div>
-      <div class="custom-shape-divider-bottom-1654842769">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
-          ></path>
-        </svg>
-      </div>
-    </div>
-
-    <!--Technology Use Section-->
-    <div class="container">
-      <div class="row justify-content-center">
-        <h3 class="txtSectionHead">
-          <span style="color: #0dcaf0; margin-right: 7px"> Technology </span>
-          Used
-        </h3>
-      </div>
-      <div class="row justify-content-center">
-        <p class="txtSectionHead">
-          (We used various technologies, some important technologies are given
-          below)
-        </p>
-      </div>
-      <div class="row justify-content-center">
-        <div
-          class="card text-center"
-          style="width: 20rem; border: none; margin: 20px"
-        >
-          <img
-            src="img/iot"
-            class="card-img-top"
-            alt="..."
-            style="height: 60px; width: 60px; align-self: center"
-          />
-          <div class="card-body">
-            <h5 class="card-title">IoT</h5>
-            <p class="card-text">
-              The Internet of Things (IoT) describes physical objects (or groups
-              of such objects) with sensors, processing ability, software, and
-              other technologies that connect and exchange data with other
-              devices and systems over the Internet or other communications
-              networks.
-            </p>
-            <a
-              href="https://en.wikipedia.org/wiki/Internet_of_things"
-              type="button"
-              class="btn btn-outline-primary"
-              >Know More ></a
-            >
-          </div>
+      <div class="card text-Left" style="width: 25rem; border: none;">
+        <div class="card-body">
+          <h3 style="color: white;">Team Members</h3>
+          <ul class="list-unstyled">
+            <li class="mb-2 itelic"><a href=""><strong>Geetanjali Nishadraj</strong></a></li>
+            <li class="mb-2 itelic"><a href=""><strong> Pankaj Kumar Soni</strong></a></li>
+            <li class="mb-2 itelic"><a href=""><strong> Anjali Madhukar</strong></a></li>
+            <li class="mb-2 itelic"><a href=""><strong> Abhinay Dev Berma</strong></a></li>
+            <li class="mb-2 itelic"><a href=""><strong> Ambika Prajapati</strong></a></li>
+          </ul>
+          <h4 style="color: white;">Electrical Engineering</h4>
         </div>
-        <div
-          class="card text-center"
-          style="width: 20rem; border: none; margin: 20px"
-        >
-          <img
-            src="img/node"
-            class="card-img-top"
-            alt="..."
-            style="height: 60px; width: 90px; align-self: center"
-          />
-          <div class="card-body">
-            <h5 class="card-title">NODE JS</h5>
-            <p class="card-text">
-              Node.js is an open source, cross-platform runtime environment for
-              developing server-side and networking applications. Node.js
-              applications are written in JavaScript, and can be run within the
-              Node.js runtime on OS X, Microsoft Windows, and Linux.
-            </p>
-            <a
-              href="https://www.tutorialspoint.com/nodejs/nodejs_introduction.htm"
-              type="button"
-              class="btn btn-outline-primary"
-              >Know More ></a
-            >
-          </div>
-        </div>
-        <div
-          class="card text-center"
-          style="width: 20rem; border: none; margin: 30px 20px"
-        >
-          <img
-            src="img/eagle"
-            class="card-img-top"
-            alt="..."
-            style="height: 55px; width: 150px; align-self: center"
-          />
-          <div class="card-body">
-            <h5 class="card-title">EAGLE</h5>
-            <p class="card-text">
-              EAGLE is a scriptable electronic design automation (EDA)
-              application with schematic capture, printed circuit board (PCB)
-              layout, auto-router and computer-aided manufacturing (CAM)
-              features. EAGLE stands for Easily Applicable Graphical Layout
-              Editor and is developed by CadSoft Computer GmbH. The company was
-              acquired by Autodesk Inc. in 2016.
-            </p>
-            <a
-              href="https://en.wikipedia.org/wiki/EAGLE_(program)"
-              type="button"
-              class="btn btn-outline-primary"
-              >Know More ></a
-            >
-          </div>
+      </div>
+      <div class="card text-Left" style="width: 25rem; border: none;">
+        <div class="card-body">
+          <h3 style="color: white;">Gauided By</h3>
+          <ul class="list-unstyled">
+            <li class="mb-2 itelic"><a href=""><strong> Prof. S. K. Dewangan</strong></a></li>
+          </ul>
+          <h4 style="color: white;">Electrical Engineering Department</h4>
         </div>
       </div>
     </div>
+  </div>
 
-    <!--Page Head section 2-->
-    <div class="wraper" style="margin: 0px; padding: 20px">
-      <div class="container">
-        <div class="row justify-content-center">
-          <h3 class="txtSectionHead" style="color: white">
-            <span style="color: #0dcaf0; margin-right: 7px"> Components </span>
-            Used
-          </h3>
-        </div>
-        <div class="row justify-content-center" style="text-align: center">
-          <p class="txtSectionHead" style="color: white">
-            (We used various components, some important components are given
-            below)
-          </p>
-        </div>
-        <div
-          class="row align-items-center justify-content-center"
-          style="margin-top: 30px"
-        >
-          <div class="c2s1">
-            <div
-              class="card text-center"
-              style="width: 40rem; border: none; margin: 20px"
-            >
-              <div class="card-body" style="background-color: blueviolet">
-                <h4 class="card-title" style="color: white">ESP32</h4>
-                <h3 class="card-title" style="color: white">ESP32</h3>
-                <p class="card-text" style="color: white">
-                  ESP32 is a series of low-cost, low-power system on a chip
-                  microcontrollers with integrated Wi-Fi and dual-mode
-                  Bluetooth. The ESP32 series employs either a Tensilica Xtensa
-                  LX6 microprocessor in both dual-core and single-core
-                  variations, Xtensa LX7 dual-core microprocessor or a
-                  single-core RISC-V microprocessor and includes built-in
-                  antenna switches, RF balun, power amplifier, low-noise receive
-                  amplifier, filters, and power-management modules. ESP32 is
-                  created and developed by Espressif Systems, a Shanghai-based
-                  Chinese company, and is manufactured by TSMC using their 40 nm
-                  process
-                </p>
-                <a
-                  href="https://en.wikipedia.org/wiki/Internet_of_things"
-                  type="button"
-                  class="btn btn-outline-primary"
-                  style="border-color: white; color: white"
-                  >Know More ></a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="c2s1">
-            <img
-              class="imgBanner"
-              src="img/esp32"
-              style="height: 200px; width: auto; align-self: center"
-            />
-          </div>
-        </div>
-        <div
-          class="row align-items-center justify-content-center"
-          style="margin-top: 30px"
-        >
-          <div class="c2s1">
-            <div
-              class="card text-center"
-              style="width: 40rem; border: none; margin: 20px"
-            >
-              <div class="card-body" style="background-color: blueviolet">
-                <h4 class="card-title" style="color: white">TRIAC</h4>
-                <h3 class="card-title" style="color: white">TRIAC</h3>
-                <p class="card-text" style="color: white">
-                  A TRIAC (triode for alternating current; also bidirectional
-                  triode thyristor or bilateral triode thyristor[1]) is a three
-                  terminal electronic component that conducts current in either
-                  direction when triggered. The term TRIAC is a genericised
-                  trademark. TRIACs are a subset of thyristors (analogous to a
-                  relay in that a small voltage and current can control a much
-                  larger voltage and current) and are related to silicon
-                  controlled rectifiers (SCRs). TRIACs differ from SCRs in that
-                  they allow current flow in both directions, whereas an SCR can
-                  only conduct current in a single direction. Most TRIACs can be
-                  triggered by applying either a positive or negative voltage to
-                  the gate (an SCR requires a positive voltage). Once triggered,
-                  SCRs and TRIACs continue to conduct, even if the gate current
-                  ceases, until the main current drops below a certain level
-                  called the holding current.
-                </p>
-                <a
-                  href="https://en.wikipedia.org/wiki/TRIAC#:~:text=A%20TRIAC%20(triode%20for%20alternating,TRIAC%20is%20a%20genericised%20trademark."
-                  type="button"
-                  class="btn btn-outline-primary"
-                  style="border-color: white; color: white"
-                  >Know More ></a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="c2s1">
-            <img
-              class="imgBanner"
-              src="img/triac"
-              style="height: 200px; width: auto; align-self: center"
-            />
-          </div>
-        </div>
-        <div
-          class="row align-items-center justify-content-center"
-          style="margin-top: 30px"
-        >
-          <div class="c2s1">
-            <div
-              class="card text-center"
-              style="width: 40rem; border: none; margin: 20px"
-            >
-              <div class="card-body" style="background-color: blueviolet">
-                <h4 class="card-title" style="color: white">TTP223</h4>
-                <h3 class="card-title" style="color: white">TTP223</h3>
-                <p class="card-text" style="color: white">
-                  The TTP223-BA6/TTP223N-BA6 TonTouchTM is a touch pad detector
-                  IC which offers 1 touch key. The touching detection IC is
-                  designed for replacing traditional direct button key with
-                  diverse pad size. Low power consumption and wide operating
-                  voltage are the contact key features for DC or AC application.
-                </p>
-                <a
-                  href="https://en.wikipedia.org/wiki/Internet_of_things"
-                  type="button"
-                  class="btn btn-outline-primary"
-                  style="border-color: white; color: white"
-                  >Know More ></a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="c2s1">
-            <img
-              class="imgBanner"
-              src="img/ttp223"
-              style="height: 200px; width: auto; align-self: center"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+  <h1>Hello, world!</h1>
+  <h1>Hello from EJS</h1>
+  <button id="clickBtn">CLICK</button>
+  <h3 id="abhi">Hello</h3>
+  <script src="./HAMP.js" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+</body>
 
-    <h1>Hello, world!</h1>
-    <h1>Hello from EJS</h1>
-    <button id="clickBtn">CLICK</button>
-    <h3 id="abhi">Hello</h3>
-    <script src="./HAMP.js" async defer></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
-  </body>
 </html>

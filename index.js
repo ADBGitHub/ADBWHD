@@ -73,6 +73,21 @@ app.get("/img/triac", (req, res) => {
 app.get("/img/ttp223", (req, res) => {
   res.send(fs.readFileSync("./views/images/ttp223.png"));
 });
+app.get("/img/p1", (req, res) => {
+  res.send(fs.readFileSync("./views/images/P1.png"));
+});
+app.get("/img/p2", (req, res) => {
+  res.send(fs.readFileSync("./views/images/P2.png"));
+});
+app.get("/img/p3", (req, res) => {
+  res.send(fs.readFileSync("./views/images/P3.png"));
+});
+app.get("/img/nxt", (req, res) => {
+  res.send(fs.readFileSync("./views/images/nxt.png"));
+});
+app.get("/img/prv", (req, res) => {
+  res.send(fs.readFileSync("./views/images/prv.png"));
+});
 app.get("/ajax", (req, res) => {
   res.send("AJAX DATA");
 });
