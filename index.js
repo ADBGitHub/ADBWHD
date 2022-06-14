@@ -23,6 +23,8 @@ let cs1Val = 0.0;
 let cs2Val = 0.0;
 let vsVal = 0.0;
 
+let energy = 0.0;
+
 let sensor = 0;
 let door = 0;
 let doorLock = 0;
@@ -307,7 +309,9 @@ app.get("/status4", (req, res) => {
         "F" +
         cs2Val.toString() +
         "G" +
-        vsVal.toString()
+        vsVal.toString() +
+        "H" +
+        energy.toString()
     );
   }
 });
