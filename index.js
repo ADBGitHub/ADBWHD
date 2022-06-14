@@ -23,6 +23,10 @@ let cs1Val = 0.0;
 let cs2Val = 0.0;
 let vsVal = 0.0;
 
+let prvTime = 0.0;
+let crtTime = 0.0;
+let prvPowr = 0.0;
+let powr = 0.0;
 let energy = 0.0;
 
 let sensor = 0;
@@ -284,6 +288,9 @@ app.get("/status4", (req, res) => {
     cs1Val = req.query.cs1Val;
     cs2Val = req.query.cs2Val;
     vsVal = req.query.vsVal;
+    prvTime = req.query.prvTime;
+    crtTime = req.query.crtTime;
+    powr = req.query.powr;
     res.send(
       "A" +
         switch8.toString() +
@@ -294,6 +301,10 @@ app.get("/status4", (req, res) => {
         "D" +
         switch11.toString()
     );
+    energy =
+      energy +
+      0.5 * (crtTime - prvTime) * (powr - prvPowr) +
+      (crtTime - prvTime) * (powr - (powr - prvPowr));
   } else {
     res.send(
       "A" +
