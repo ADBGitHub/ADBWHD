@@ -306,7 +306,6 @@ app.get("/status4", (req, res) => {
       (0.5 * (crtTime / 1000 - prvTime / 1000) * (powr - prvPowr) +
         (crtTime - prvTime) * (powr - (powr - prvPowr))) /
         3600;
-    energy = energy / 3600;
   } else {
     res.send(
       "A" +
