@@ -13,6 +13,16 @@ let switch4 = 0;
 let switch5 = 0;
 let switch6 = 0;
 let switch7 = 0;
+
+let switch8 = 0;
+let switch9 = 0;
+let switch10 = 0;
+let switch11 = 0;
+
+let cs1Val = 0.0;
+let cs2Val = 0.0;
+let vsVal = 0.0;
+
 let sensor = 0;
 let door = 0;
 let doorLock = 0;
@@ -36,22 +46,25 @@ app.use(
 );
 app.use(bodyParser.json());
 app.use(express.static("public"));
+app.use(express.static("views"));
 let hf = fs.readFileSync("./views/HAMP.ejs", "utf-8");
 app.get("/", (req, res) => {
   res.render("HAMP");
 });
-app.get("/bedroom.ejs", (req, res) => {
-  res.render("bedroom");
+
+app.get("/bedroom.html", (req, res) => {
+  res.render("bedroom.html", { root: __dirname });
 });
-app.get("/hall.ejs", (req, res) => {
-  res.render("hall");
+app.get("/hall.html", (req, res) => {
+  res.render("hall.html");
 });
-app.get("/kitchen.ejs", (req, res) => {
-  res.render("kitchen");
+app.get("/kitchen.html", (req, res) => {
+  res.render("kitchen.html");
 });
-app.get("/projectReport.ejs", (req, res) => {
-  res.render("projectReport");
+app.get("/projectReport.html", (req, res) => {
+  res.sendFile("projectReport.html", { root: __dirname });
 });
+
 app.get("/images/Smart-Home1.png", (req, res) => {
   res.send(fs.readFileSync("./views/images/Smart-Home1.png"));
 });
@@ -89,7 +102,7 @@ app.get("/img/prv", (req, res) => {
   res.send(fs.readFileSync("./views/images/prv.png"));
 });
 app.get("/PRF.pdf", (req, res) => {
-  res.send(fs.readFileSync("./PRF.pdf"));
+  res.sendFile("PRE.pdf", { root: __dirname });
 });
 app.get("/ajax", (req, res) => {
   res.send("AJAX DATA");
@@ -176,6 +189,39 @@ app.get("/offSwitch7", (req, res) => {
   res.send("Load 2 is off");
 });
 
+app.get("/onSwitch8", (req, res) => {
+  switch8 = 1;
+  res.send("Switch 1 is on");
+});
+app.get("/onSwitch9", (req, res) => {
+  switch9 = 1;
+  res.send("Switch 1 is on");
+});
+app.get("/onSwitch10", (req, res) => {
+  switch10 = 1;
+  res.send("Switch 1 is on");
+});
+app.get("/onSwitch11", (req, res) => {
+  switch11 = 1;
+  res.send("Switch 1 is on");
+});
+app.get("/offSwitch8", (req, res) => {
+  switch8 = 0;
+  res.send("Switch 1 is off");
+});
+app.get("/offSwitch9", (req, res) => {
+  switch9 = 0;
+  res.send("Switch 1 is off");
+});
+app.get("/offSwitch10", (req, res) => {
+  switch10 = 0;
+  res.send("Switch 1 is off");
+});
+app.get("/offSwitch11", (req, res) => {
+  switch11 = 0;
+  res.send("Switch 1 is off");
+});
+
 app.get("/status", (req, res) => {
   if (switch1 == 0 && switch2 == 0) {
     res.send("0");
@@ -228,6 +274,41 @@ app.get("/status3", (req, res) => {
     Vrms = req.query.Vrms;
     Powr = (Irms * Vrms) / 1000;
     warning2 = req.query.Warning;
+  }
+});
+
+app.get("/status4", (req, res) => {
+  if ("cs1Val" in req.query) {
+    cs1Val = req.query.cs1Val;
+    cs2Val = req.query.cs2Val;
+    vsVal = req.query.vsVal;
+    res.send(
+      "A" +
+        switch8.toString() +
+        "B" +
+        switch9.toString() +
+        "C" +
+        switch10.toString() +
+        "D" +
+        switch11.toString()
+    );
+  } else {
+    res.send(
+      "A" +
+        switch8.toString() +
+        "B" +
+        switch9.toString() +
+        "C" +
+        switch10.toString() +
+        "D" +
+        switch11.toString() +
+        "E" +
+        cs1Val.toString() +
+        "F" +
+        cs2Val.toString() +
+        "G" +
+        vsVal.toString()
+    );
   }
 });
 
