@@ -11,6 +11,24 @@
     .navbar {
       background-color: blueviolet;
     }
+
+    .container-responsive {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 56.25%;
+      /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    }
+
+    .responsive-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
   </style>
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark">
@@ -55,7 +73,14 @@
     </div>
   </div>
 </nav>
-<embed src="/PRF.pdf" type="application/pdf" width="100%" height="1400"></embed>
+<div class="row">
+  <div class="col-md-12">
+    <div class="container-responsive">
+      <iframe class="responsive-iframe" src="/PRF.pdf"></iframe>
+    </div>
+  </div>
+</div>
+<!-- <embed src="/PRF.pdf" type="application/pdf" width="100%" height="1400"></embed> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
