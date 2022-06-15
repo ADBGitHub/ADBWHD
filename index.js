@@ -12,6 +12,7 @@ app.use(
     extended: true,
   })
 );
+
 app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(express.static("views"));
@@ -165,7 +166,6 @@ app.get("/offSensor", (req, res) => {
   sensor = 0;
   res.send("sensor 2 is off");
 });
-
 app.get("/status1", (req, res) => {
   if (switch3 == 0 && sensor == 0) {
     res.send("0");
@@ -329,31 +329,6 @@ app.get("/warning1", (req, res) => {
   res.send("All Ok...!!");
 });
 
-/* <-----------------Eye Blink Sensor Project GECB--------------------------> */
-let eye = 1;
-let driverSleep = 0;
-
-app.get("/eyeIsOpen", (req, res) => {
-  eye = 1;
-  res.send("Eye is Open");
-});
-app.get("/eyeIsClosed", (req, res) => {
-  eye = 0;
-  res.send("Eye is Close");
-});
-app.get("/driverInSleep", (req, res) => {
-  driverSleep = 1;
-  res.send("Driver is Sleaping");
-});
-app.get("/driverNotSleep", (req, res) => {
-  driverSleep = 0;
-  res.send("Driver is not Sleaping");
-});
-
-app.listen(PORT, () =>
-  console.log(`Server running on port: http://localhost:${PORT}`)
-);
-
 /* <------------------Transformer Monitoring------------------------------> */
 let switch6 = 0;
 let switch7 = 0;
@@ -379,7 +354,6 @@ app.get("/offSwitch7", (req, res) => {
   switch7 = 0;
   res.send("Load 2 is off");
 });
-
 app.get("/status3", (req, res) => {
   if (switch6 == 0 && switch7 == 0) {
     res.send("0");
@@ -405,11 +379,9 @@ let switch8 = 0;
 let switch9 = 0;
 let switch10 = 0;
 let switch11 = 0;
-
 let cs1Val = 0.0;
 let cs2Val = 0.0;
 let vsVal = 0.0;
-
 let prvTime = 0.0;
 let crtTime = 0.0;
 let prvPowr = 0.0;
@@ -508,3 +480,31 @@ app.get("/getData", (req, res) => {
       warning2
   );
 });
+
+/* <-----------------Eye Blink Sensor Project GECB--------------------------> */
+let eye = 1;
+let driverSleep = 0;
+
+app.get("/eyeIsOpen", (req, res) => {
+  eye = 1;
+  res.send("Eye is Open");
+});
+app.get("/eyeIsClosed", (req, res) => {
+  eye = 0;
+  res.send("Eye is Close");
+});
+app.get("/driverInSleep", (req, res) => {
+  driverSleep = 1;
+  res.send("Driver is Sleaping");
+});
+app.get("/driverNotSleep", (req, res) => {
+  driverSleep = 0;
+  res.send("Driver is not Sleaping");
+});
+app.get("/status5", (req, res) => {
+  res.send("A" + String(eye) + "B" + String(driverSleep));
+});
+
+app.listen(PORT, () =>
+  console.log(`Server running on port: http://localhost:${PORT}`)
+);
