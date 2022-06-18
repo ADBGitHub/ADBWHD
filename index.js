@@ -128,8 +128,8 @@ app.get("/status", (req, res) => {
     adbc2 = req.query.adbc2;
     adbv = req.query.adbv;
     adbp = req.query.adbp;
-    adbpA1 = adbv * adbc1;
-    adbpA2 = adbv * adbc2;
+    adbpA1 = (adbv * adbc1) / 1000;
+    adbpA2 = (adbv * adbc2) / 1000;
   }
   if (switch1 == 0 && switch2 == 0) {
     res.send("0");
