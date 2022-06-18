@@ -1,8 +1,10 @@
 import express from "express";
 import bodyParser from "body-parser";
 import fs from "fs";
+import { google } from "googleapis";
 import http from "http";
 const app = express();
+
 app.set("view engine", "ejs");
 const PORT = process.env.PORT || 47;
 const Router = express.Router();
@@ -19,6 +21,14 @@ app.use(express.static("views"));
 
 let switch1 = 0;
 let switch2 = 0;
+
+let adbv = 0;
+let adbc1 = 0;
+let adbc2 = 0;
+let adbp = 0;
+let adbpA1 = 0;
+let adbpA2 = 0;
+let time = 0;
 
 let hf = fs.readFileSync("./views/HAMP.ejs", "utf-8");
 
@@ -113,6 +123,14 @@ app.get("/offSwitch2", (req, res) => {
 });
 
 app.get("/status", (req, res) => {
+  if ("adbc1" in req.query) {
+    adbc1 = req.query.adbc1;
+    adbc2 = req.query.adbc2;
+    adbv = req.query.adbv;
+    adbp = req.query.adbp;
+    adbpA1 = adbv * adbc1;
+    adbpA2 = adbv * adbc2;
+  }
   if (switch1 == 0 && switch2 == 0) {
     res.send("0");
   } else if (switch1 == 1 && switch2 == 0) {
@@ -123,27 +141,28 @@ app.get("/status", (req, res) => {
     res.send("1");
   }
 });
+app.get("/getVariables", (req, res) => {
+  res.send({
+    adbc1: adbc1,
+    adbc2: adbc2,
+    adbv: adbv,
+    adbp: adbp,
+    adbpA1: adbpA1,
+    adbpA2: adbpA2,
+    time: time,
+  });
+});
 
-app.get("/updateSwitch11", (req, res) => {
-  switch1 = 1;
-  switch2 = 1;
-  res.send("updated");
-});
-app.get("/updateSwitch10", (req, res) => {
-  switch1 = 1;
-  switch2 = 0;
-  res.send("updated");
-});
-app.get("/updateSwitch01", (req, res) => {
-  switch1 = 0;
-  switch2 = 1;
-  res.send("updated");
-});
-app.get("/updateSwitch00", (req, res) => {
-  switch1 = 0;
-  switch2 = 0;
-  res.send("updated");
-});
+// app.get("/adbwhdinfo", (req, res) => {
+
+//     adbc1 = req.query.adbc1;
+//     adbc2 = req.query.adbc2;
+//     adbv = req.query.adbv;
+//     adbp = req.query.adbp;
+//     adbpA1 = adbv * adbc1;
+//     adbpA2 = adbv * adbc2;
+//     res.send();
+// });
 
 /* <-----------------Irigation System Sachin --------------------------> */
 

@@ -1,39 +1,173 @@
-let clickBtn = document.getElementById("clickBtn");
-clickBtn.addEventListener("click", onClickHandler);
-function onClickHandler() {
-  console.log("You Clicked clickBtn");
+let adbv = 0;
+let adbc1;
+let adbc2;
+let adbp = 0;
+let adbpA1;
+let adbpA2;
+let time = 0;
+let newDivName = "chart_v";
+let yData = 0;
+
+// console.log(adbv);
+let graphTitle = "Voltage";
+let voltg = document.getElementById("voltg");
+let crnt = document.getElementById("crnt");
+let powr = document.getElementById("powr");
+let rowV = document.getElementById("rowV");
+let rowA = document.getElementById("rowA");
+let rowP = document.getElementById("rowP");
+let chart_v = document.getElementById("chart_v");
+let chart_c = document.getElementById("chart_c");
+let chart_p = document.getElementById("chart_p");
+let vVal = document.getElementById("vVal");
+let cVal = document.getElementById("cVal");
+let pVal = document.getElementById("pVal");
+let switch1 = document.getElementById("switch1");
+let switch2 = document.getElementById("switch2");
+switch1.addEventListener("click", toggleSwitch1);
+switch2.addEventListener("click", toggleSwitch2);
+function toggleSwitch1() {
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", "/ajax", true);
-  xhr.onprogress = function () {
-    console.log("On Progress");
-  };
-  xhr.onload = function () {
-    console.log(this.responseText);
-  };
+  if (document.querySelector("#switch1").checked) {
+    xhr.open("GET", "/onSwitch1", true);
+  } else {
+    xhr.open("GET", "/offSwitch1", true);
+  }
   xhr.send();
+  xhr.onload = function () {
+    console.log(this.response);
+  };
+}
+function toggleSwitch2() {
+  const xhr = new XMLHttpRequest();
+  if (document.querySelector("#switch2").checked) {
+    xhr.open("GET", "/onSwitch2", true);
+  } else {
+    xhr.open("GET", "/offSwitch2", true);
+  }
+  xhr.send();
+  xhr.onload = function () {
+    console.log(this.response);
+  };
+}
+voltg.addEventListener("click", activeVoltg);
+function activeVoltg() {
+  rowV.className = "cardRow btnActive";
+  rowA.className = "cardRow";
+  rowP.className = "cardRow";
+  graphTitle = "Voltage";
+  chart_v.style.display = "block";
+  chart_c.style.display = "none";
+  chart_p.style.display = "none";
+  plotGraph("chart_v");
+}
+crnt.addEventListener("click", activeCrnt);
+function activeCrnt() {
+  rowV.className = "cardRow";
+  rowA.className = "cardRow btnActive";
+  rowP.className = "cardRow";
+  graphTitle = "Current";
+  chart_v.style.display = "none";
+  chart_c.style.display = "block";
+  chart_p.style.display = "none";
+  plotGraph("chart_c");
+}
+powr.addEventListener("click", activePowr);
+function activePowr() {
+  rowV.className = "cardRow";
+  rowA.className = "cardRow";
+  rowP.className = "cardRow btnActive";
+  graphTitle = "Power";
+  chart_v.style.display = "none";
+  chart_c.style.display = "none";
+  chart_p.style.display = "block";
+  plotGraph("chart_p");
 }
 
-function getData() {
-  return Math.random();
-}
-
-Plotly.plot("chart_div", [
-  {
-    y: [getData()],
-    type: "line",
+let layout = {
+  title: graphTitle,
+  xaxis: {
+    title: "Time",
   },
-]);
+  yaxis: {
+    title: graphTitle,
+  },
+};
+Plotly.newPlot(
+  newDivName,
+  [
+    {
+      y: [yData],
+      type: "line",
+    },
+  ],
+  layout,
+  { responsive: true }
+);
+
+function plotGraph(divName) {
+  newDivName = divName;
+  layout = {
+    title: graphTitle,
+    xaxis: {
+      title: "Time",
+    },
+    yaxis: {
+      title: graphTitle,
+    },
+  };
+
+  Plotly.newPlot(
+    newDivName,
+    [
+      {
+        y: [yData],
+        type: "line",
+      },
+    ],
+    layout,
+    { responsive: true }
+  );
+}
 
 var cnt = 0;
 
-// setInterval(function () {
-//   Plotly.extendTraces("chart_div", { y: [[getData()]] }, [0]);
-//   cnt++;
-//   if (cnt > 500) {
-//     Plotly.relayout("chart_div", {
-//       xaxis: {
-//         range: [cnt - 500, cnt],
-//       },
-//     });
-//   }
-// }, 15);
+setInterval(function () {
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", "/getVariables", true);
+  // xhr.onprogress = function () {
+  //   console.log("On Progress");
+  // };
+  xhr.onload = function () {
+    let responceData = JSON.parse(this.response);
+    adbv = responceData.adbv;
+    adbc1 = responceData.adbc1;
+    adbc2 = responceData.adbc2;
+    adbp = responceData.adbp;
+    adbpA1 = responceData.adbpA1;
+    adbpA2 = responceData.adbpA2;
+    time = responceData.time;
+    if (graphTitle == "Voltage") {
+      yData = adbv;
+    } else if (graphTitle == "Current") {
+      yData = adbc1 + adbc2;
+    } else {
+      yData = adbp;
+    }
+  };
+  xhr.send();
+
+  vVal.innerText = adbv + " Volt";
+  cVal.innerText = adbc1 + adbc2 + " mA";
+  pVal.innerText = adbp + " W";
+  // console.log(newDivName);
+  // Plotly.extendTraces(newDivName, { y: [[yData]] }, [0]);
+  // cnt++;
+  // if (cnt > 60) {
+  //   Plotly.relayout(newDivName, {
+  //     xaxis: {
+  //       range: [cnt - 60, cnt],
+  //     },
+  //   });
+  // }
+}, 500);
