@@ -26,8 +26,6 @@ let adbv = 0;
 let adbc1 = 0;
 let adbc2 = 0;
 let adbp = 0;
-let adbpA1 = 0;
-let adbpA2 = 0;
 let time = 0;
 
 let hf = fs.readFileSync("./views/HAMP.ejs", "utf-8");
@@ -129,8 +127,6 @@ app.get("/status", (req, res) => {
     adbc2 = req.query.adbc2;
     adbv = req.query.adbv;
     adbp = req.query.adbp;
-    adbpA1 = (adbv * adbc1) / 1000;
-    adbpA2 = (adbv * adbc2) / 1000;
   }
   if (switch1 == 0 && switch2 == 0) {
     res.send("0");
@@ -148,8 +144,6 @@ app.get("/getVariables", (req, res) => {
     adbc2: adbc2,
     adbv: adbv,
     adbp: adbp,
-    adbpA1: adbpA1,
-    adbpA2: adbpA2,
     time: time,
     switch1: switch1,
     switch2: switch2,

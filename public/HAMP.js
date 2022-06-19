@@ -152,8 +152,8 @@ setInterval(function () {
     adbc1 = responceData.adbc1;
     adbc2 = responceData.adbc2;
     adbp = responceData.adbp;
-    adbpA1 = responceData.adbpA1;
-    adbpA2 = responceData.adbpA2;
+    adbpA1 = parseFloat(adbc1) * parseFloat(adbv);
+    adbpA2 = parseFloat(adbc2) * parseFloat(adbv);
     time = responceData.time;
     s1 = responceData.switch1;
     s2 = responceData.switch2;
@@ -186,14 +186,13 @@ setInterval(function () {
   app2Vval.innerText = adbv + " V";
   app2Cval.innerText = adbc2 + " mA";
   app2Pval.innerText = adbpA2 + " W";
-  // console.log(newDivName);
-  // Plotly.extendTraces(newDivName, { y: [[yData]] }, [0]);
-  // cnt++;
-  // if (cnt > 60) {
-  //   Plotly.relayout(newDivName, {
-  //     xaxis: {
-  //       range: [cnt - 60, cnt],
-  //     },
-  //   });
-  // }
+  Plotly.extendTraces(newDivName, { y: [[yData]] }, [0]);
+  cnt++;
+  if (cnt > 60) {
+    Plotly.relayout(newDivName, {
+      xaxis: {
+        range: [cnt - 60, cnt],
+      },
+    });
+  }
 }, 500);
