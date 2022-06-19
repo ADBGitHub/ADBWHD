@@ -178,7 +178,7 @@ setInterval(function () {
   xhr.send();
 
   vVal.innerText = adbv + " Volt";
-  cVal.innerText = adbc1 + adbc2 + " mA";
+  cVal.innerText = parseFloat(adbc1) + parseFloat(adbc2) + " mA";
   pVal.innerText = adbp + " W";
   app1Vval.innerText = adbv + " V";
   app1Cval.innerText = adbc1 + " mA";
