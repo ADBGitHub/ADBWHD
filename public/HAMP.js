@@ -114,6 +114,7 @@ Plotly.newPlot(
 );
 
 function plotGraph(divName) {
+  cnt = 0;
   newDivName = divName;
   layout = {
     title: graphTitle,
