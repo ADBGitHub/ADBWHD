@@ -152,15 +152,15 @@ setInterval(function () {
     adbc1 = responceData.adbc1;
     adbc2 = responceData.adbc2;
     adbp = responceData.adbp;
-    adbpA1 = (parseFloat(adbc1) * parseFloat(adbv)).toFixed(2);
-    adbpA2 = (parseFloat(adbc2) * parseFloat(adbv)).toFixed(2);
+    adbpA1 = (parseFloat(adbc1) * parseFloat(adbv)) / 1000;
+    adbpA2 = (parseFloat(adbc2) * parseFloat(adbv)) / 1000;
     time = responceData.time;
     s1 = responceData.switch1;
     s2 = responceData.switch2;
     if (graphTitle == "Voltage") {
       yData = adbv;
     } else if (graphTitle == "Current") {
-      yData = adbc1 + adbc2;
+      yData = parseFloat(adbc1) + parseFloat(adbc2);
     } else {
       yData = adbp;
     }
