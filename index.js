@@ -46,7 +46,7 @@ app.get("/kitchen.html", (req, res) => {
   res.render("kitchen.html");
 });
 app.get("/projectReport.html", (req, res) => {
-  res.sendFile("projectReport.html", { root: __dirname });
+  res.render("projectReport.html", { root: __dirname });
 });
 
 app.get("/images/Smart-Home1.png", (req, res) => {
@@ -85,6 +85,7 @@ app.get("/img/nxt", (req, res) => {
 app.get("/img/prv", (req, res) => {
   res.send(fs.readFileSync("./views/images/prv.png"));
 });
+
 app.get("/PRF.pdf", (req, res) => {
   res.sendFile("PRE.pdf", { root: __dirname });
 });
@@ -150,6 +151,8 @@ app.get("/getVariables", (req, res) => {
     adbpA1: adbpA1,
     adbpA2: adbpA2,
     time: time,
+    switch1: switch1,
+    switch2: switch2,
   });
 });
 

@@ -7,6 +7,8 @@ let adbpA2;
 let time = 0;
 let newDivName = "chart_v";
 let yData = 0;
+let s1 = 0;
+let s2 = 0;
 
 // console.log(adbv);
 let graphTitle = "Voltage";
@@ -153,12 +155,24 @@ setInterval(function () {
     adbpA1 = responceData.adbpA1;
     adbpA2 = responceData.adbpA2;
     time = responceData.time;
+    s1 = responceData.switch1;
+    s2 = responceData.switch2;
     if (graphTitle == "Voltage") {
       yData = adbv;
     } else if (graphTitle == "Current") {
       yData = adbc1 + adbc2;
     } else {
       yData = adbp;
+    }
+    if (s1) {
+      document.querySelector("#switch1").checked = true;
+    } else {
+      document.querySelector("#switch1").checked = false;
+    }
+    if (s2) {
+      document.querySelector("#switch2").checked = true;
+    } else {
+      document.querySelector("#switch2").checked = false;
     }
   };
   xhr.send();
