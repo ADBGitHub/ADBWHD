@@ -353,6 +353,7 @@ let Irms = 0;
 let Vrms = 0;
 let Powr = 0;
 let warning2 = "No Warning...!!";
+let oilLevel = 0;
 
 app.get("/onSwitch6", (req, res) => {
   switch6 = 1;
@@ -386,7 +387,24 @@ app.get("/status3", (req, res) => {
     Vrms = req.query.Vrms;
     Powr = (Irms * Vrms) / 1000;
     warning2 = req.query.Warning;
+    oilLevel = req.query.oilLevel;
   }
+});
+app.get("/getData", (req, res) => {
+  res.send(
+    "O" +
+      oilLevel.toString() +
+      "T" +
+      temp.toString() +
+      "I" +
+      Irms.toString() +
+      "V" +
+      Vrms.toString() +
+      "P" +
+      Powr.toString() +
+      "W" +
+      warning2
+  );
 });
 
 /* <------------------Energy Meater Vivek---------------------------------> */
@@ -480,21 +498,6 @@ app.get("/status4", (req, res) => {
         energy.toString()
     );
   }
-});
-
-app.get("/getData", (req, res) => {
-  res.send(
-    "T" +
-      temp.toString() +
-      "I" +
-      Irms.toString() +
-      "V" +
-      Vrms.toString() +
-      "P" +
-      Powr.toString() +
-      "W" +
-      warning2
-  );
 });
 
 /* <-----------------Eye Blink Sensor Project GECB--------------------------> */
