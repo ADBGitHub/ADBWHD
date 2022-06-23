@@ -526,13 +526,19 @@ app.get("/status5", (req, res) => {
 
 /* <--------------------Vision Walker Project GECB--------------------------> */
 let distance = 0;
+let warning3 = "All Ok...!!";
 
 app.get("/visionDistance", (req, res) => {
   if ("distance" in req.query) {
     distance = req.query.distance;
     res.send("updated");
+    if (distance <= 4) {
+      warning3 = "DANGER...!!";
+    } else {
+      warning3 = "All Ok...!!";
+    }
   } else {
-    res.send(String(distance));
+    res.send("X" + String(distance) + "Y" + warning3);
   }
 });
 
