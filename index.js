@@ -530,9 +530,9 @@ let distance = 0;
 app.get("/visionDistance", (req, res) => {
   if ("distance" in req.query) {
     distance = req.query.distance;
-    res.send("Distance Updated");
+    res.send("updated");
   } else {
-    res.send(distance);
+    res.send(String(distance));
   }
 });
 
