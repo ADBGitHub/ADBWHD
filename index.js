@@ -524,6 +524,18 @@ app.get("/status5", (req, res) => {
   res.send("A" + String(eye) + "B" + String(driverSleep));
 });
 
+/* <--------------------Vision Walker Project GECB--------------------------> */
+let distance = 0;
+
+app.get("/visionDistance", (req, res) => {
+  if ("distance" in req.query) {
+    distance = req.query.distance;
+    res.send("Distance Updated");
+  } else {
+    res.send(distance);
+  }
+});
+
 app.listen(PORT, () =>
   console.log(`Server running on port: http://localhost:${PORT}`)
 );
