@@ -159,7 +159,7 @@ app.get("/getVariables", (req, res) => {
 //     adbpA1 = adbv * adbc1;
 //     adbpA2 = adbv * adbc2;
 //     res.send();
-// });
+// });jknkjnkj
 
 /* <-----------------Irigation System Sachin --------------------------> */
 
