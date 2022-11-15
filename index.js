@@ -90,6 +90,9 @@ app.get("/PRF.pdf", (req, res) => {
 app.get("/ajax", (req, res) => {
   res.send("AJAX DATA");
 });
+app.get("/getJason", (req, res) => {
+  res.send({ id: 1303, say: "hello" });
+});
 
 // app.get("/onSwitch1", (req, res) => {
 //   http.get("http://192.168.35.136/1E514763510C563onSwitch1", (res) => {
