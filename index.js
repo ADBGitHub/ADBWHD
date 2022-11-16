@@ -33,6 +33,9 @@ let hf = fs.readFileSync("./views/HAMP.ejs", "utf-8");
 app.get("/", (req, res) => {
   res.render("HAMP");
 });
+app.get("/httpReq", (req, res) => {
+  res.render("httpReqToMCU");
+});
 
 app.get("/bedroom.html", (req, res) => {
   res.render("bedroom.html", { root: __dirname });
