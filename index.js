@@ -33,8 +33,8 @@ let hf = fs.readFileSync("./views/HAMP.ejs", "utf-8");
 app.get("/", (req, res) => {
   res.render("HAMP");
 });
-app.get("/httpReq", (req, res) => {
-  res.render("httpReqToMCU");
+app.get("/httpReqToMCU.html", (req, res) => {
+  res.render("httpReqToMCU.html", { root: __dirname });
 });
 
 app.get("/bedroom.html", (req, res) => {
@@ -93,7 +93,13 @@ app.get("/PRF.pdf", (req, res) => {
 app.get("/ajax", (req, res) => {
   res.send("AJAX DATA");
 });
-app.get("/getJason", (req, res) => {
+app.get("/sendHttpReq", (req, res) => {
+  http.get("http://192.168.4.1/giveData", (res) => {
+    let data = "";
+    res.on(data, (chunk) => {
+      data += chunk;
+    });
+  });
   res.send({ id: 1303, say: "hello" });
 });
 
