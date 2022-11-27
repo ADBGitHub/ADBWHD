@@ -176,16 +176,16 @@ app.get("/C25Status", (req, res) => {
     C25S1 = req.query.C25S1;
   }
   if ("C25S2" in req.query) {
-    C25S1 = req.query.C25S2;
+    C25S2 = req.query.C25S2;
   }
   if ("C25S3" in req.query) {
-    C25S1 = req.query.C25S3;
+    C25S3 = req.query.C25S3;
   }
   if ("C25S4" in req.query) {
-    C25S1 = req.query.C25S4;
+    C25S4 = req.query.C25S4;
   }
   if ("C25S5" in req.query) {
-    C25S1 = req.query.C25S5;
+    C25S5 = req.query.C25S5;
   }
   res.send(
     "C25S1" +
