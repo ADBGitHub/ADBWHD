@@ -118,7 +118,7 @@ app.get("/sendHttpReq", (req, res) => {
 // });
 app.get("/onSwitch1", (req, res) => {
   switch1 = 1;
-  res.send("switch 1 is on");
+  res.send("switch 1 is ON");
 });
 app.get("/offSwitch1", (req, res) => {
   switch1 = 0;
