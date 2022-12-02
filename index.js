@@ -93,15 +93,15 @@ app.get("/PRF.pdf", (req, res) => {
 app.get("/ajax", (req, res) => {
   res.send("AJAX DATA");
 });
-app.get("/sendHttpReq", (req, res) => {
-  http.get("http://192.168.4.1/giveData", (res) => {
-    let data = "";
-    res.on(data, (chunk) => {
-      data += chunk;
-    });
-  });
-  res.send({ id: 1303, say: "hello" });
-});
+// app.get("/sendHttpReq", (req, res) => {
+//   http.get("http://192.168.4.1/giveData", (res) => {
+//     let data = "";
+//     res.on(data, (chunk) => {
+//       data += chunk;
+//     });
+//   });
+//   res.send({ id: 1303, say: "hello" });
+// });
 
 // app.get("/onSwitch1", (req, res) => {
 //   http.get("http://192.168.35.136/1E514763510C563onSwitch1", (res) => {
@@ -150,17 +150,17 @@ app.get("/status", (req, res) => {
     res.send("1");
   }
 });
-app.get("/getVariables", (req, res) => {
-  res.send({
-    adbc1: adbc1,
-    adbc2: adbc2,
-    adbv: adbv,
-    adbp: adbp,
-    time: time,
-    switch1: switch1,
-    switch2: switch2,
-  });
-});
+// app.get("/getVariables", (req, res) => {
+//   res.send({
+//     adbc1: adbc1,
+//     adbc2: adbc2,
+//     adbv: adbv,
+//     adbp: adbp,
+//     time: time,
+//     switch1: switch1,
+//     switch2: switch2,
+//   });
+// });
 
 //Project C25
 
