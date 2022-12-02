@@ -164,84 +164,84 @@ app.get("/getVariables", (req, res) => {
 
 //Project C25
 
-let C25S1, C25S2, C25S3, C25S4, C25S5;
-C25S1 = 0;
-C25S2 = 0;
-C25S3 = 0;
-C25S4 = 0;
-C25S5 = 0;
+// let C25S1, C25S2, C25S3, C25S4, C25S5;
+// C25S1 = 0;
+// C25S2 = 0;
+// C25S3 = 0;
+// C25S4 = 0;
+// C25S5 = 0;
 
-app.get("/C25Status", (req, res) => {
-  if ("C25S1" in req.query) {
-    C25S1 = req.query.C25S1;
-  }
-  if ("C25S2" in req.query) {
-    C25S2 = req.query.C25S2;
-  }
-  if ("C25S3" in req.query) {
-    C25S3 = req.query.C25S3;
-  }
-  if ("C25S4" in req.query) {
-    C25S4 = req.query.C25S4;
-  }
-  if ("C25S5" in req.query) {
-    C25S5 = req.query.C25S5;
-  }
-  res.send(
-    "C25S1" +
-      C25S1.toString() +
-      "C25S2" +
-      C25S2.toString() +
-      "C25S3" +
-      C25S3.toString() +
-      "C25S4" +
-      C25S4.toString() +
-      "C25S5" +
-      C25S5.toString()
-  );
-});
+// app.get("/C25Status", (req, res) => {
+//   if ("C25S1" in req.query) {
+//     C25S1 = req.query.C25S1;
+//   }
+//   if ("C25S2" in req.query) {
+//     C25S2 = req.query.C25S2;
+//   }
+//   if ("C25S3" in req.query) {
+//     C25S3 = req.query.C25S3;
+//   }
+//   if ("C25S4" in req.query) {
+//     C25S4 = req.query.C25S4;
+//   }
+//   if ("C25S5" in req.query) {
+//     C25S5 = req.query.C25S5;
+//   }
+//   res.send(
+//     "C25S1" +
+//       C25S1.toString() +
+//       "C25S2" +
+//       C25S2.toString() +
+//       "C25S3" +
+//       C25S3.toString() +
+//       "C25S4" +
+//       C25S4.toString() +
+//       "C25S5" +
+//       C25S5.toString()
+//   );
+// });
 
-app.get("/onC25S1", (req, res) => {
-  C25S1 = 1;
-  res.send("C25S1 is on");
-});
-app.get("/onC25S2", (req, res) => {
-  C25S2 = 1;
-  res.send("C25S2 is on");
-});
-app.get("/onC25S3", (req, res) => {
-  C25S3 = 1;
-  res.send("C25S3 is on");
-});
-app.get("/onC25S4", (req, res) => {
-  C25S4 = 1;
-  res.send("C25S4 is on");
-});
-app.get("/onC25S5", (req, res) => {
-  C25S5 = 1;
-  res.send("C25S5 is on");
-});
+// app.get("/onC25S1", (req, res) => {
+//   C25S1 = 1;
+//   res.send("C25S1 is on");
+// });
+// app.get("/onC25S2", (req, res) => {
+//   C25S2 = 1;
+//   res.send("C25S2 is on");
+// });
+// app.get("/onC25S3", (req, res) => {
+//   C25S3 = 1;
+//   res.send("C25S3 is on");
+// });
+// app.get("/onC25S4", (req, res) => {
+//   C25S4 = 1;
+//   res.send("C25S4 is on");
+// });
+// app.get("/onC25S5", (req, res) => {
+//   C25S5 = 1;
+//   res.send("C25S5 is on");
+// });
 
-app.get("/offC25S1", (req, res) => {
-  C25S1 = 0;
-  res.send("C25S1 is off");
-});
-app.get("/offC25S2", (req, res) => {
-  C25S2 = 0;
-  res.send("C25S2 is off");
-});
-app.get("/offC25S3", (req, res) => {
-  C25S3 = 0;
-  res.send("C25S3 is off");
-});
-app.get("/offC25S4", (req, res) => {
-  C25S4 = 0;
-  res.send("C25S4 is off");
-});
-app.get("/offC25S5", (req, res) => {
-  C25S5 = 0;
-  res.send("C25S5 is off");
-});
+// app.get("/offC25S1", (req, res) => {
+//   C25S1 = 0;
+//   res.send("C25S1 is off");
+// });
+// app.get("/offC25S2", (req, res) => {
+//   C25S2 = 0;
+//   res.send("C25S2 is off");
+// });
+// app.get("/offC25S3", (req, res) => {
+//   C25S3 = 0;
+//   res.send("C25S3 is off");
+// });
+// app.get("/offC25S4", (req, res) => {
+//   C25S4 = 0;
+//   res.send("C25S4 is off");
+// });
+// app.get("/offC25S5", (req, res) => {
+//   C25S5 = 0;
+//   res.send("C25S5 is off");
+// });
 
 // app.get("/adbwhdinfo", (req, res) => {
 
