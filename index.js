@@ -9,239 +9,240 @@ app.set("view engine", "ejs");
 const PORT = process.env.PORT || 47;
 const Router = express.Router();
 
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+// app.use(
+//   bodyParser.urlencoded({
+//     extended: true,
+//   })
+// );
 
-app.use(bodyParser.json());
-app.use(express.static("public"));
-app.use(express.static("views"));
+// app.use(bodyParser.json());
+// app.use(express.static("public"));
+// app.use(express.static("views"));
 
-let switch1 = 0;
-let switch2 = 0;
+// let switch1 = 0;
+// let switch2 = 0;
 
-let adbv = 0;
-let adbc1 = 0;
-let adbc2 = 0;
-let adbp = 0;
-let time = 0;
+// let adbv = 0;
+// let adbc1 = 0;
+// let adbc2 = 0;
+// let adbp = 0;
+// let time = 0;
 
-let hf = fs.readFileSync("./views/HAMP.ejs", "utf-8");
+// let hf = fs.readFileSync("./views/HAMP.ejs", "utf-8");
 
 app.get("/", (req, res) => {
-  res.render("HAMP");
+  // res.render("HAMP");
+  res.send("OKChutiyaHeroku");
 });
-app.get("/httpReqToMCU.html", (req, res) => {
-  res.render("httpReqToMCU.html", { root: __dirname });
-});
-
-app.get("/bedroom.html", (req, res) => {
-  res.render("bedroom.html", { root: __dirname });
-});
-app.get("/hall.html", (req, res) => {
-  res.render("hall.html");
-});
-app.get("/kitchen.html", (req, res) => {
-  res.render("kitchen.html");
-});
-app.get("/projectReport.html", (req, res) => {
-  res.render("projectReport.html", { root: __dirname });
-});
-
-app.get("/images/Smart-Home1.png", (req, res) => {
-  res.send(fs.readFileSync("./views/images/Smart-Home1.png"));
-});
-app.get("/img/iot", (req, res) => {
-  res.send(fs.readFileSync("./views/images/iot.png"));
-});
-app.get("/img/node", (req, res) => {
-  res.send(fs.readFileSync("./views/images/node.png"));
-});
-app.get("/img/eagle", (req, res) => {
-  res.send(fs.readFileSync("./views/images/eagle.png"));
-});
-app.get("/img/esp32", (req, res) => {
-  res.send(fs.readFileSync("./views/images/esp32.png"));
-});
-app.get("/img/triac", (req, res) => {
-  res.send(fs.readFileSync("./views/images/triac.png"));
-});
-app.get("/img/ttp223", (req, res) => {
-  res.send(fs.readFileSync("./views/images/ttp223.png"));
-});
-app.get("/img/p1", (req, res) => {
-  res.send(fs.readFileSync("./views/images/P1.png"));
-});
-app.get("/img/p2", (req, res) => {
-  res.send(fs.readFileSync("./views/images/P2.png"));
-});
-app.get("/img/p3", (req, res) => {
-  res.send(fs.readFileSync("./views/images/P3.png"));
-});
-app.get("/img/nxt", (req, res) => {
-  res.send(fs.readFileSync("./views/images/nxt.png"));
-});
-app.get("/img/prv", (req, res) => {
-  res.send(fs.readFileSync("./views/images/prv.png"));
-});
-
-app.get("/PRF.pdf", (req, res) => {
-  res.sendFile("PRF.pdf", { root: __dirname });
-});
-app.get("/ajax", (req, res) => {
-  res.send("AJAX DATA");
-});
-// app.get("/sendHttpReq", (req, res) => {
-//   http.get("http://192.168.4.1/giveData", (res) => {
-//     let data = "";
-//     res.on(data, (chunk) => {
-//       data += chunk;
-//     });
-//   });
-//   res.send({ id: 1303, say: "hello" });
+// app.get("/httpReqToMCU.html", (req, res) => {
+//   res.render("httpReqToMCU.html", { root: __dirname });
 // });
 
+// app.get("/bedroom.html", (req, res) => {
+//   res.render("bedroom.html", { root: __dirname });
+// });
+// app.get("/hall.html", (req, res) => {
+//   res.render("hall.html");
+// });
+// app.get("/kitchen.html", (req, res) => {
+//   res.render("kitchen.html");
+// });
+// app.get("/projectReport.html", (req, res) => {
+//   res.render("projectReport.html", { root: __dirname });
+// });
+
+// app.get("/images/Smart-Home1.png", (req, res) => {
+//   res.send(fs.readFileSync("./views/images/Smart-Home1.png"));
+// });
+// app.get("/img/iot", (req, res) => {
+//   res.send(fs.readFileSync("./views/images/iot.png"));
+// });
+// app.get("/img/node", (req, res) => {
+//   res.send(fs.readFileSync("./views/images/node.png"));
+// });
+// app.get("/img/eagle", (req, res) => {
+//   res.send(fs.readFileSync("./views/images/eagle.png"));
+// });
+// app.get("/img/esp32", (req, res) => {
+//   res.send(fs.readFileSync("./views/images/esp32.png"));
+// });
+// app.get("/img/triac", (req, res) => {
+//   res.send(fs.readFileSync("./views/images/triac.png"));
+// });
+// app.get("/img/ttp223", (req, res) => {
+//   res.send(fs.readFileSync("./views/images/ttp223.png"));
+// });
+// app.get("/img/p1", (req, res) => {
+//   res.send(fs.readFileSync("./views/images/P1.png"));
+// });
+// app.get("/img/p2", (req, res) => {
+//   res.send(fs.readFileSync("./views/images/P2.png"));
+// });
+// app.get("/img/p3", (req, res) => {
+//   res.send(fs.readFileSync("./views/images/P3.png"));
+// });
+// app.get("/img/nxt", (req, res) => {
+//   res.send(fs.readFileSync("./views/images/nxt.png"));
+// });
+// app.get("/img/prv", (req, res) => {
+//   res.send(fs.readFileSync("./views/images/prv.png"));
+// });
+
+// app.get("/PRF.pdf", (req, res) => {
+//   res.sendFile("PRF.pdf", { root: __dirname });
+// });
+// app.get("/ajax", (req, res) => {
+//   res.send("AJAX DATA");
+// });
+// // app.get("/sendHttpReq", (req, res) => {
+// //   http.get("http://192.168.4.1/giveData", (res) => {
+// //     let data = "";
+// //     res.on(data, (chunk) => {
+// //       data += chunk;
+// //     });
+// //   });
+// //   res.send({ id: 1303, say: "hello" });
+// // });
+
+// // app.get("/onSwitch1", (req, res) => {
+// //   http.get("http://192.168.35.136/1E514763510C563onSwitch1", (res) => {
+// //     let data = "";
+// //     res.on("data", (chunk) => {
+// //       data += chunk;
+// //     });
+
+// //     res.on("end", () => {
+// //       console.log(data);
+// //     });
+// //   });
+// //   res.send(data);
+// // });
 // app.get("/onSwitch1", (req, res) => {
-//   http.get("http://192.168.35.136/1E514763510C563onSwitch1", (res) => {
-//     let data = "";
-//     res.on("data", (chunk) => {
-//       data += chunk;
-//     });
-
-//     res.on("end", () => {
-//       console.log(data);
-//     });
-//   });
-//   res.send(data);
+//   switch1 = 1;
+//   res.send("switch 1 is on");
 // });
-app.get("/onSwitch1", (req, res) => {
-  switch1 = 1;
-  res.send("switch 1 is on");
-});
-app.get("/offSwitch1", (req, res) => {
-  switch1 = 0;
-  res.send("switch 1 is off");
-});
-app.get("/onSwitch2", (req, res) => {
-  switch2 = 1;
-  res.send("switch 2 is on");
-});
-app.get("/offSwitch2", (req, res) => {
-  switch2 = 0;
-  res.send("switch 2 is off");
-});
-
-app.get("/status", (req, res) => {
-  if ("adbc1" in req.query) {
-    adbc1 = req.query.adbc1;
-    adbc2 = req.query.adbc2;
-    adbv = req.query.adbv;
-    adbp = req.query.adbp;
-  }
-  if (switch1 == 0 && switch2 == 0) {
-    res.send("0");
-  } else if (switch1 == 1 && switch2 == 0) {
-    res.send("10");
-  } else if (switch1 == 1 && switch2 == 1) {
-    res.send("11");
-  } else if (switch1 == 0 && switch2 == 1) {
-    res.send("1");
-  }
-});
-// app.get("/getVariables", (req, res) => {
-//   res.send({
-//     adbc1: adbc1,
-//     adbc2: adbc2,
-//     adbv: adbv,
-//     adbp: adbp,
-//     time: time,
-//     switch1: switch1,
-//     switch2: switch2,
-//   });
+// app.get("/offSwitch1", (req, res) => {
+//   switch1 = 0;
+//   res.send("switch 1 is off");
+// });
+// app.get("/onSwitch2", (req, res) => {
+//   switch2 = 1;
+//   res.send("switch 2 is on");
+// });
+// app.get("/offSwitch2", (req, res) => {
+//   switch2 = 0;
+//   res.send("switch 2 is off");
 // });
 
-//Project C25
+// app.get("/status", (req, res) => {
+//   if ("adbc1" in req.query) {
+//     adbc1 = req.query.adbc1;
+//     adbc2 = req.query.adbc2;
+//     adbv = req.query.adbv;
+//     adbp = req.query.adbp;
+//   }
+//   if (switch1 == 0 && switch2 == 0) {
+//     res.send("0");
+//   } else if (switch1 == 1 && switch2 == 0) {
+//     res.send("10");
+//   } else if (switch1 == 1 && switch2 == 1) {
+//     res.send("11");
+//   } else if (switch1 == 0 && switch2 == 1) {
+//     res.send("1");
+//   }
+// });
+// // app.get("/getVariables", (req, res) => {
+// //   res.send({
+// //     adbc1: adbc1,
+// //     adbc2: adbc2,
+// //     adbv: adbv,
+// //     adbp: adbp,
+// //     time: time,
+// //     switch1: switch1,
+// //     switch2: switch2,
+// //   });
+// // });
 
-let C25S1, C25S2, C25S3, C25S4, C25S5;
-C25S1 = 0;
-C25S2 = 0;
-C25S3 = 0;
-C25S4 = 0;
-C25S5 = 0;
+// //Project C25
 
-app.get("/C25Status", (req, res) => {
-  if ("C25S1" in req.query) {
-    C25S1 = req.query.C25S1;
-  }
-  if ("C25S2" in req.query) {
-    C25S2 = req.query.C25S2;
-  }
-  if ("C25S3" in req.query) {
-    C25S3 = req.query.C25S3;
-  }
-  if ("C25S4" in req.query) {
-    C25S4 = req.query.C25S4;
-  }
-  if ("C25S5" in req.query) {
-    C25S5 = req.query.C25S5;
-  }
-  res.send(
-    "C25S1" +
-      C25S1.toString() +
-      "C25S2" +
-      C25S2.toString() +
-      "C25S3" +
-      C25S3.toString() +
-      "C25S4" +
-      C25S4.toString() +
-      "C25S5" +
-      C25S5.toString()
-  );
-});
+// let C25S1, C25S2, C25S3, C25S4, C25S5;
+// C25S1 = 0;
+// C25S2 = 0;
+// C25S3 = 0;
+// C25S4 = 0;
+// C25S5 = 0;
 
-app.get("/onC25S1", (req, res) => {
-  C25S1 = 1;
-  res.send("C25S1 is on");
-});
-app.get("/onC25S2", (req, res) => {
-  C25S2 = 1;
-  res.send("C25S2 is on");
-});
-app.get("/onC25S3", (req, res) => {
-  C25S3 = 1;
-  res.send("C25S3 is on");
-});
-app.get("/onC25S4", (req, res) => {
-  C25S4 = 1;
-  res.send("C25S4 is on");
-});
-app.get("/onC25S5", (req, res) => {
-  C25S5 = 1;
-  res.send("C25S5 is on");
-});
+// app.get("/C25Status", (req, res) => {
+//   if ("C25S1" in req.query) {
+//     C25S1 = req.query.C25S1;
+//   }
+//   if ("C25S2" in req.query) {
+//     C25S2 = req.query.C25S2;
+//   }
+//   if ("C25S3" in req.query) {
+//     C25S3 = req.query.C25S3;
+//   }
+//   if ("C25S4" in req.query) {
+//     C25S4 = req.query.C25S4;
+//   }
+//   if ("C25S5" in req.query) {
+//     C25S5 = req.query.C25S5;
+//   }
+//   res.send(
+//     "C25S1" +
+//       C25S1.toString() +
+//       "C25S2" +
+//       C25S2.toString() +
+//       "C25S3" +
+//       C25S3.toString() +
+//       "C25S4" +
+//       C25S4.toString() +
+//       "C25S5" +
+//       C25S5.toString()
+//   );
+// });
 
-app.get("/offC25S1", (req, res) => {
-  C25S1 = 0;
-  res.send("C25S1 is off");
-});
-app.get("/offC25S2", (req, res) => {
-  C25S2 = 0;
-  res.send("C25S2 is off");
-});
-app.get("/offC25S3", (req, res) => {
-  C25S3 = 0;
-  res.send("C25S3 is off");
-});
-app.get("/offC25S4", (req, res) => {
-  C25S4 = 0;
-  res.send("C25S4 is off");
-});
-app.get("/offC25S5", (req, res) => {
-  C25S5 = 0;
-  res.send("C25S5 is off");
-});
+// app.get("/onC25S1", (req, res) => {
+//   C25S1 = 1;
+//   res.send("C25S1 is on");
+// });
+// app.get("/onC25S2", (req, res) => {
+//   C25S2 = 1;
+//   res.send("C25S2 is on");
+// });
+// app.get("/onC25S3", (req, res) => {
+//   C25S3 = 1;
+//   res.send("C25S3 is on");
+// });
+// app.get("/onC25S4", (req, res) => {
+//   C25S4 = 1;
+//   res.send("C25S4 is on");
+// });
+// app.get("/onC25S5", (req, res) => {
+//   C25S5 = 1;
+//   res.send("C25S5 is on");
+// });
+
+// app.get("/offC25S1", (req, res) => {
+//   C25S1 = 0;
+//   res.send("C25S1 is off");
+// });
+// app.get("/offC25S2", (req, res) => {
+//   C25S2 = 0;
+//   res.send("C25S2 is off");
+// });
+// app.get("/offC25S3", (req, res) => {
+//   C25S3 = 0;
+//   res.send("C25S3 is off");
+// });
+// app.get("/offC25S4", (req, res) => {
+//   C25S4 = 0;
+//   res.send("C25S4 is off");
+// });
+// app.get("/offC25S5", (req, res) => {
+//   C25S5 = 0;
+//   res.send("C25S5 is off");
+// });
 
 // app.get("/adbwhdinfo", (req, res) => {
 
